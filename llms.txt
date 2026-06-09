@@ -1,0 +1,31 @@
+# ThreadSpec.org
+
+> Complete thread specification reference with 207 thread sizes across ISO metric, UNC, UNF, UNEF, NPT, and BSP standards. All dimensions calculated from ISO 724 and ASME B1.1 formulas.
+
+## Main Sections
+
+- [Metric Coarse Threads](https://threadspec.org/metric/): 36 ISO metric coarse thread sizes (M1–M68) with pitch, major/pitch/minor diameters, tap drills, and stress areas
+- [Metric Fine Threads](https://threadspec.org/metric-fine/): 56 ISO metric fine pitch thread sizes
+- [UNC Threads](https://threadspec.org/unc/): 33 Unified National Coarse thread sizes per ASME B1.1
+- [UNF Threads](https://threadspec.org/unf/): 24 Unified National Fine thread sizes
+- [UNEF Threads](https://threadspec.org/unef/): 22 Unified National Extra Fine thread sizes
+- [NPT Pipe Threads](https://threadspec.org/pipe-threads/): 19 National Pipe Taper sizes
+- [BSP Pipe Threads](https://threadspec.org/bsp/): 17 British Standard Pipe sizes
+
+## Tools
+
+- [Tap Drill Chart](https://threadspec.org/tap-drill-chart/): Complete tap drill sizes for all thread standards
+- [Thread Calculator](https://threadspec.org/calculator/): Calculate dimensions for any diameter and pitch
+- [NPT vs BSP](https://threadspec.org/npt-vs-bsp/): Comparison of NPT and BSP pipe thread standards
+
+## Key Data Points Per Thread
+
+Each thread specification includes: major diameter, pitch diameter, minor diameter (internal and external), thread depth, tensile stress area, tap drill size, proof loads by material grade.
+
+## Formulas (ISO 724)
+
+- Pitch diameter: d₂ = d − 0.6495 × P
+- Minor diameter (external): d₁ = d − 1.2269 × P
+- Minor diameter (internal): D₁ = d − 1.0825 × P
+- Thread depth: 5H/8 where H = (√3/2) × P
+- Stress area: As = (π/4) × ((d₂ + d₃)/2)²
