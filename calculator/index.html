@@ -9,6 +9,7 @@
 <meta property="og:title" content="Thread Calculator — Calculate Dimensions for Any Thread">
 <meta property="og:description" content="Calculate thread pitch diameter, minor diameter, tap drill size, and stress area for metric or inch threads. Enter any diameter and pitch.">
 <meta property="og:url" content="https://threadspec.org/calculator/">
+<meta property="og:image" content="https://threadspec.org/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ThreadSpec.org">
 <meta name="twitter:card" content="summary">
@@ -16,6 +17,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <script src="https://cdn.tailwindcss.com"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPVR72CBWM"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-EPVR72CBWM');</script>
@@ -99,6 +101,20 @@ ThreadSpec.org
 </div>
 </section>
 
+<section class="mb-12">
+<h2 class="text-2xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+<div class="space-y-5 text-sm">
+<div>
+<h3 class="font-semibold text-gray-900 mb-1">How is tensile stress area calculated?</h3>
+<p class="text-gray-700">Tensile stress area is calculated as As = (pi/4) × ((d2 + d3)/2)², where d2 is the pitch diameter and d3 = d1 - H/6 (d1 = d - 1.0825P is the basic minor diameter, H is the fundamental triangle height). This is per ISO 898-1. For unified inch threads, the calculator uses the ASME B1.1 formula As = 0.7854 × (D - 0.9743/n)², where n is threads per inch.</p>
+</div>
+<div>
+<h3 class="font-semibold text-gray-900 mb-1">What formulas does this calculator use?</h3>
+<p class="text-gray-700">This calculator uses ISO 724 formulas for metric threads and ASME B1.1 for unified inch threads. Pitch diameter: d2 = d - 0.6495P. Minor diameter: d1 = d - 1.2269P. Thread depth: 5H/8 where H = (sqrt(3)/2) × P.</p>
+</div>
+</div>
+</section>
+
 </main>
 <footer class="bg-gray-100 border-t mt-16">
 <div class="max-w-6xl mx-auto px-4 py-10">
@@ -143,7 +159,7 @@ ThreadSpec.org
 <div class="border-t pt-6 text-sm text-gray-500 text-center">
 <p>&copy; 2026 ThreadSpec.org — Thread Specifications &amp; Tap Drill Reference</p>
 <p class="mt-1">Contact: <a href="mailto:info@threadspec.org" class="text-emerald-700 hover:underline">info@threadspec.org</a></p>
-<p class="mt-1"><a href="/about/" class="hover:underline">About</a> · <a href="/sitemap.xml" class="hover:underline">Sitemap</a></p>
+<p class="mt-1"><a href="/about/" class="hover:underline">About</a> · <a href="/privacy/" class="hover:underline">Privacy</a> · <a href="/sitemap.xml" class="hover:underline">Sitemap</a></p>
 </div>
 </div>
 </footer>
@@ -172,6 +188,7 @@ function calculate() {
     if (isNaN(d) || isNaN(p_input) || d <= 0 || p_input <= 0) return;
 
     let P, d_mm, unit;
+    let asmeAs = null;
     if (sys === 'metric') {
         P = p_input;
         d_mm = d;
@@ -179,7 +196,7 @@ function calculate() {
     } else {
         P = 1.0 / p_input;  // TPI to pitch in inches
         d_mm = d * 25.4;
-        d = d;  // keep in inches for calc
+        asmeAs = 0.7854 * Math.pow(d - 0.9743 / p_input, 2) * 645.16;  // ASME B1.1, converted to mm²
         P = P * 25.4;  // convert to mm for formula
         d = d * 25.4;  // convert to mm
         unit = 'mm';
@@ -190,8 +207,8 @@ function calculate() {
     const d1 = d - 1.2269 * P;
     const D1 = d - 1.0825 * P;
     const threadDepth = 5 * H / 8;
-    const d3 = d1 - H / 6;
-    const As = (Math.PI / 4) * Math.pow((d2 + d3) / 2, 2);
+    const d3 = D1 - H / 6;
+    const As = asmeAs !== null ? asmeAs : (Math.PI / 4) * Math.pow((d2 + d3) / 2, 2);
 
     const TPI = 25.4 / P;
 
@@ -212,5 +229,5 @@ calculate();
 </script>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Thread Calculator","url":"https://threadspec.org/calculator/","applicationCategory":"Engineering","operatingSystem":"Web"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is tensile stress area calculated?","acceptedAnswer":{"@type":"Answer","text":"Tensile stress area is calculated as As = (pi/4) × ((d2 + d3)/2)², where d2 is the pitch diameter and d3 = d1 - H/6 (d1 is the minor diameter, H is the fundamental triangle height). This is per ISO 898-1."}},{"@type":"Question","name":"What formulas does this calculator use?","acceptedAnswer":{"@type":"Answer","text":"This calculator uses ISO 724 formulas for 60-degree threads (metric and unified). Pitch diameter: d2 = d - 0.6495P. Minor diameter: d1 = d - 1.2269P. Thread depth: 5H/8 where H = (sqrt(3)/2) × P."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is tensile stress area calculated?","acceptedAnswer":{"@type":"Answer","text":"Tensile stress area is calculated as As = (pi/4) × ((d2 + d3)/2)², where d2 is the pitch diameter and d3 = d1 - H/6 (d1 = d - 1.0825P is the basic minor diameter, H is the fundamental triangle height). This is per ISO 898-1. For unified inch threads, the calculator uses the ASME B1.1 formula As = 0.7854 × (D - 0.9743/n)², where n is threads per inch."}},{"@type":"Question","name":"What formulas does this calculator use?","acceptedAnswer":{"@type":"Answer","text":"This calculator uses ISO 724 formulas for metric threads and ASME B1.1 for unified inch threads. Pitch diameter: d2 = d - 0.6495P. Minor diameter: d1 = d - 1.2269P. Thread depth: 5H/8 where H = (sqrt(3)/2) × P."}}]}</script>
 </body></html>
