@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>M64×6.0 Thread — Dimensions, Tap Drill & Specifications</title>
-<meta name="description" content="Complete M64×6.0 thread specifications: major diameter 64mm, pitch diameter 60.103mm, tap drill 57.51mm. ISO 724 calculated dimensions.">
+<meta name="description" content="Complete M64×6.0 thread specifications: major diameter 64mm, pitch diameter 60.103mm, tap drill 58.0mm. ISO 724 calculated dimensions.">
 <link rel="canonical" href="https://threadspec.org/metric/m64/">
 <link rel="alternate" hreflang="en" href="https://threadspec.org/metric/m64/">
 <link rel="alternate" hreflang="x-default" href="https://threadspec.org/metric/m64/">
@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://threadspec.org/metric/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ThreadSpec.org">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#059669">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -41,7 +41,7 @@ ThreadSpec.org
 <a href="/tap-drill-chart/" class="hover:text-emerald-200">Tap Drills</a>
 <a href="/calculator/" class="hover:text-emerald-200">Calculator</a>
 </div>
-<button onclick="document.getElementById('mob-menu').classList.toggle('hidden')" class="md:hidden p-2">
+<button aria-label="Open navigation menu" aria-expanded="false" onclick="var m=document.getElementById('mob-menu');var open=!m.classList.contains('hidden');m.classList.toggle('hidden');this.setAttribute('aria-expanded',String(open?'false':'true'))" class="md:hidden p-2">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
 </button>
 </div>
@@ -86,8 +86,8 @@ ThreadSpec.org
 <h2 class="text-xl font-bold text-gray-900 mb-3">Tap Drill Size</h2>
 <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
 <p class="text-lg"><strong>Recommended tap drill:</strong> <span class="text-2xl font-bold text-emerald-700">58.0 mm</span></p>
-<p class="text-sm text-gray-600 mt-1">Calculated minor diameter (D₁): 57.51 mm. Closest standard metric drill: 58.0 mm.</p>
-<p class="text-sm text-gray-600 mt-1">Closest inch drill: 2-17/64" (2.2656" / 57.55 mm)</p>
+<p class="text-sm text-gray-600 mt-1">Calculated minor diameter (D₁): 57.51 mm. Standard metric tap drill (d − P): 58.0 mm.</p>
+<p class="text-sm text-gray-600 mt-1">Closest inch drill: 2-9/32" (2.2812&quot; / 57.94 mm)</p>
 </div>
 </section>
 
@@ -122,16 +122,10 @@ ThreadSpec.org
 <td class="px-3 py-2 text-right">1391.5</td>
 </tr><tr class="hover:bg-emerald-50">
 <td class="px-3 py-2 font-medium">8.8</td>
-<td class="px-3 py-2 text-right">580</td>
-<td class="px-3 py-2 text-right">800</td>
-<td class="px-3 py-2 text-right">1552.1</td>
-<td class="px-3 py-2 text-right">2140.8</td>
-</tr><tr class="hover:bg-emerald-50">
-<td class="px-3 py-2 font-medium">9.8</td>
-<td class="px-3 py-2 text-right">650</td>
-<td class="px-3 py-2 text-right">900</td>
-<td class="px-3 py-2 text-right">1739.4</td>
-<td class="px-3 py-2 text-right">2408.4</td>
+<td class="px-3 py-2 text-right">600</td>
+<td class="px-3 py-2 text-right">830</td>
+<td class="px-3 py-2 text-right">1605.6</td>
+<td class="px-3 py-2 text-right">2221.1</td>
 </tr><tr class="hover:bg-emerald-50">
 <td class="px-3 py-2 font-medium">10.9</td>
 <td class="px-3 py-2 text-right">830</td>
@@ -177,7 +171,7 @@ ThreadSpec.org
 <div class="max-w-6xl mx-auto px-4 py-10">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Metric Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Metric Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/metric/" class="hover:text-emerald-700">ISO Metric Coarse</a></li>
 <li><a href="/metric-fine/" class="hover:text-emerald-700">ISO Metric Fine</a></li>
@@ -187,7 +181,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Inch Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Inch Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/unc/" class="hover:text-emerald-700">UNC Thread Chart</a></li>
 <li><a href="/unf/" class="hover:text-emerald-700">UNF Thread Chart</a></li>
@@ -197,7 +191,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Pipe Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Pipe Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/pipe-threads/" class="hover:text-emerald-700">NPT Thread Chart</a></li>
 <li><a href="/bsp/" class="hover:text-emerald-700">BSP Thread Chart</a></li>
@@ -205,7 +199,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Tools</h3>
+<div class="font-semibold text-gray-800 mb-3">Tools</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/tap-drill-chart/" class="hover:text-emerald-700">Tap Drill Chart</a></li>
 <li><a href="/calculator/" class="hover:text-emerald-700">Thread Calculator</a></li>

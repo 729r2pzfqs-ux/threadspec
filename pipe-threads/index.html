@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://threadspec.org/pipe-threads/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ThreadSpec.org">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#059669">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -41,7 +41,7 @@ ThreadSpec.org
 <a href="/tap-drill-chart/" class="hover:text-emerald-200">Tap Drills</a>
 <a href="/calculator/" class="hover:text-emerald-200">Calculator</a>
 </div>
-<button onclick="document.getElementById('mob-menu').classList.toggle('hidden')" class="md:hidden p-2">
+<button aria-label="Open navigation menu" aria-expanded="false" onclick="var m=document.getElementById('mob-menu');var open=!m.classList.contains('hidden');m.classList.toggle('hidden');this.setAttribute('aria-expanded',String(open?'false':'true'))" class="md:hidden p-2">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
 </button>
 </div>
@@ -68,153 +68,156 @@ ThreadSpec.org
 <th class="px-3 py-2 text-left">Thread</th>
 <th class="px-3 py-2 text-right">TPI</th>
 <th class="px-3 py-2 text-right">OD (in)</th>
-<th class="px-3 py-2 text-right">Pitch Ø (in)</th>
-<th class="px-3 py-2 text-right">Minor Ø (in)</th>
-<th class="px-3 py-2 text-right">Tap Drill (mm)</th>
+<th class="px-3 py-2 text-right">E0 Pitch Ø (in)</th>
+<th class="px-3 py-2 text-right">Minor Ø at E0 (in)</th>
+<th class="px-3 py-2 text-right">Tap Drill</th>
 </tr></thead>
 <tbody class="divide-y"><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/1-16-npt/" class="text-amber-700 font-medium hover:underline">1/16" NPT</a></td>
 <td class="px-3 py-2 text-right">27</td>
 <td class="px-3 py-2 text-right">0.3125</td>
-<td class="px-3 py-2 text-right">0.2884</td>
-<td class="px-3 py-2 text-right">0.2671</td>
-<td class="px-3 py-2 text-right">6.78</td>
+<td class="px-3 py-2 text-right">0.27118</td>
+<td class="px-3 py-2 text-right">0.25327</td>
+<td class="px-3 py-2 text-right">15/64" (5.95 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/1-8-npt/" class="text-amber-700 font-medium hover:underline">1/8" NPT</a></td>
 <td class="px-3 py-2 text-right">27</td>
-<td class="px-3 py-2 text-right">0.405</td>
-<td class="px-3 py-2 text-right">0.3809</td>
-<td class="px-3 py-2 text-right">0.3596</td>
-<td class="px-3 py-2 text-right">9.13</td>
+<td class="px-3 py-2 text-right">0.4050</td>
+<td class="px-3 py-2 text-right">0.36351</td>
+<td class="px-3 py-2 text-right">0.34560</td>
+<td class="px-3 py-2 text-right">R (8.61 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/1-4-npt/" class="text-amber-700 font-medium hover:underline">1/4" NPT</a></td>
 <td class="px-3 py-2 text-right">18</td>
-<td class="px-3 py-2 text-right">0.54</td>
-<td class="px-3 py-2 text-right">0.5039</td>
-<td class="px-3 py-2 text-right">0.4718</td>
-<td class="px-3 py-2 text-right">11.98</td>
+<td class="px-3 py-2 text-right">0.5400</td>
+<td class="px-3 py-2 text-right">0.47739</td>
+<td class="px-3 py-2 text-right">0.44929</td>
+<td class="px-3 py-2 text-right">7/16" (11.11 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/3-8-npt/" class="text-amber-700 font-medium hover:underline">3/8" NPT</a></td>
 <td class="px-3 py-2 text-right">18</td>
-<td class="px-3 py-2 text-right">0.675</td>
-<td class="px-3 py-2 text-right">0.6389</td>
-<td class="px-3 py-2 text-right">0.6068</td>
-<td class="px-3 py-2 text-right">15.41</td>
+<td class="px-3 py-2 text-right">0.6750</td>
+<td class="px-3 py-2 text-right">0.61201</td>
+<td class="px-3 py-2 text-right">0.58391</td>
+<td class="px-3 py-2 text-right">37/64" (14.68 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/1-2-npt/" class="text-amber-700 font-medium hover:underline">1/2" NPT</a></td>
 <td class="px-3 py-2 text-right">14</td>
-<td class="px-3 py-2 text-right">0.84</td>
-<td class="px-3 py-2 text-right">0.7936</td>
-<td class="px-3 py-2 text-right">0.7524</td>
-<td class="px-3 py-2 text-right">19.11</td>
+<td class="px-3 py-2 text-right">0.8400</td>
+<td class="px-3 py-2 text-right">0.75843</td>
+<td class="px-3 py-2 text-right">0.72235</td>
+<td class="px-3 py-2 text-right">23/32" (18.26 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/3-4-npt/" class="text-amber-700 font-medium hover:underline">3/4" NPT</a></td>
 <td class="px-3 py-2 text-right">14</td>
-<td class="px-3 py-2 text-right">1.05</td>
-<td class="px-3 py-2 text-right">1.0036</td>
-<td class="px-3 py-2 text-right">0.9624</td>
-<td class="px-3 py-2 text-right">24.44</td>
+<td class="px-3 py-2 text-right">1.0500</td>
+<td class="px-3 py-2 text-right">0.96768</td>
+<td class="px-3 py-2 text-right">0.93160</td>
+<td class="px-3 py-2 text-right">59/64" (23.42 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/1-npt/" class="text-amber-700 font-medium hover:underline">1" NPT</a></td>
 <td class="px-3 py-2 text-right">11.5</td>
-<td class="px-3 py-2 text-right">1.315</td>
-<td class="px-3 py-2 text-right">1.2585</td>
-<td class="px-3 py-2 text-right">1.2083</td>
-<td class="px-3 py-2 text-right">30.69</td>
+<td class="px-3 py-2 text-right">1.3150</td>
+<td class="px-3 py-2 text-right">1.21363</td>
+<td class="px-3 py-2 text-right">1.17062</td>
+<td class="px-3 py-2 text-right">1-5/32" (29.37 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/1-1-4-npt/" class="text-amber-700 font-medium hover:underline">1-1/4" NPT</a></td>
 <td class="px-3 py-2 text-right">11.5</td>
-<td class="px-3 py-2 text-right">1.66</td>
-<td class="px-3 py-2 text-right">1.6035</td>
-<td class="px-3 py-2 text-right">1.5533</td>
-<td class="px-3 py-2 text-right">39.45</td>
+<td class="px-3 py-2 text-right">1.6600</td>
+<td class="px-3 py-2 text-right">1.55713</td>
+<td class="px-3 py-2 text-right">1.51912</td>
+<td class="px-3 py-2 text-right">1-1/2" (38.10 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/1-1-2-npt/" class="text-amber-700 font-medium hover:underline">1-1/2" NPT</a></td>
 <td class="px-3 py-2 text-right">11.5</td>
-<td class="px-3 py-2 text-right">1.9</td>
-<td class="px-3 py-2 text-right">1.8435</td>
-<td class="px-3 py-2 text-right">1.7933</td>
-<td class="px-3 py-2 text-right">45.55</td>
+<td class="px-3 py-2 text-right">1.9000</td>
+<td class="px-3 py-2 text-right">1.79609</td>
+<td class="px-3 py-2 text-right">1.75808</td>
+<td class="px-3 py-2 text-right">1-47/64" (44.05 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/2-npt/" class="text-amber-700 font-medium hover:underline">2" NPT</a></td>
 <td class="px-3 py-2 text-right">11.5</td>
-<td class="px-3 py-2 text-right">2.375</td>
-<td class="px-3 py-2 text-right">2.3185</td>
-<td class="px-3 py-2 text-right">2.2683</td>
-<td class="px-3 py-2 text-right">57.62</td>
+<td class="px-3 py-2 text-right">2.3750</td>
+<td class="px-3 py-2 text-right">2.27000</td>
+<td class="px-3 py-2 text-right">2.23199</td>
+<td class="px-3 py-2 text-right">2-7/32" (56.36 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/2-1-2-npt/" class="text-amber-700 font-medium hover:underline">2-1/2" NPT</a></td>
 <td class="px-3 py-2 text-right">8</td>
-<td class="px-3 py-2 text-right">2.875</td>
-<td class="px-3 py-2 text-right">2.7938</td>
-<td class="px-3 py-2 text-right">2.7216</td>
-<td class="px-3 py-2 text-right">69.13</td>
+<td class="px-3 py-2 text-right">2.8750</td>
+<td class="px-3 py-2 text-right">2.71953</td>
+<td class="px-3 py-2 text-right">2.62300</td>
+<td class="px-3 py-2 text-right">2-5/8" (66.67 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/3-npt/" class="text-amber-700 font-medium hover:underline">3" NPT</a></td>
 <td class="px-3 py-2 text-right">8</td>
-<td class="px-3 py-2 text-right">3.5</td>
-<td class="px-3 py-2 text-right">3.4188</td>
-<td class="px-3 py-2 text-right">3.3466</td>
-<td class="px-3 py-2 text-right">85.0</td>
+<td class="px-3 py-2 text-right">3.5000</td>
+<td class="px-3 py-2 text-right">3.34062</td>
+<td class="px-3 py-2 text-right">3.24409</td>
+<td class="px-3 py-2 text-right">3-1/4" (82.55 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/3-1-2-npt/" class="text-amber-700 font-medium hover:underline">3-1/2" NPT</a></td>
 <td class="px-3 py-2 text-right">8</td>
-<td class="px-3 py-2 text-right">4</td>
-<td class="px-3 py-2 text-right">3.9188</td>
-<td class="px-3 py-2 text-right">3.8466</td>
-<td class="px-3 py-2 text-right">97.7</td>
+<td class="px-3 py-2 text-right">4.0000</td>
+<td class="px-3 py-2 text-right">3.83750</td>
+<td class="px-3 py-2 text-right">3.74097</td>
+<td class="px-3 py-2 text-right">3-3/4" (95.25 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/4-npt/" class="text-amber-700 font-medium hover:underline">4" NPT</a></td>
 <td class="px-3 py-2 text-right">8</td>
-<td class="px-3 py-2 text-right">4.5</td>
-<td class="px-3 py-2 text-right">4.4188</td>
-<td class="px-3 py-2 text-right">4.3466</td>
-<td class="px-3 py-2 text-right">110.4</td>
+<td class="px-3 py-2 text-right">4.5000</td>
+<td class="px-3 py-2 text-right">4.33438</td>
+<td class="px-3 py-2 text-right">4.23785</td>
+<td class="px-3 py-2 text-right">4-1/4" (107.95 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/5-npt/" class="text-amber-700 font-medium hover:underline">5" NPT</a></td>
 <td class="px-3 py-2 text-right">8</td>
-<td class="px-3 py-2 text-right">5.563</td>
-<td class="px-3 py-2 text-right">5.4818</td>
-<td class="px-3 py-2 text-right">5.4096</td>
-<td class="px-3 py-2 text-right">137.4</td>
+<td class="px-3 py-2 text-right">5.5630</td>
+<td class="px-3 py-2 text-right">5.39073</td>
+<td class="px-3 py-2 text-right">5.29420</td>
+<td class="px-3 py-2 text-right">5-1/4" (133.35 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/6-npt/" class="text-amber-700 font-medium hover:underline">6" NPT</a></td>
 <td class="px-3 py-2 text-right">8</td>
-<td class="px-3 py-2 text-right">6.625</td>
-<td class="px-3 py-2 text-right">6.5438</td>
-<td class="px-3 py-2 text-right">6.4716</td>
-<td class="px-3 py-2 text-right">164.38</td>
+<td class="px-3 py-2 text-right">6.6250</td>
+<td class="px-3 py-2 text-right">6.44609</td>
+<td class="px-3 py-2 text-right">6.34956</td>
+<td class="px-3 py-2 text-right">6-5/16" (160.34 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/8-npt/" class="text-amber-700 font-medium hover:underline">8" NPT</a></td>
 <td class="px-3 py-2 text-right">8</td>
-<td class="px-3 py-2 text-right">8.625</td>
-<td class="px-3 py-2 text-right">8.5438</td>
-<td class="px-3 py-2 text-right">8.4716</td>
-<td class="px-3 py-2 text-right">215.18</td>
+<td class="px-3 py-2 text-right">8.6250</td>
+<td class="px-3 py-2 text-right">8.43359</td>
+<td class="px-3 py-2 text-right">8.33706</td>
+<td class="px-3 py-2 text-right">8-5/16" (211.14 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/10-npt/" class="text-amber-700 font-medium hover:underline">10" NPT</a></td>
 <td class="px-3 py-2 text-right">8</td>
-<td class="px-3 py-2 text-right">10.75</td>
-<td class="px-3 py-2 text-right">10.6688</td>
-<td class="px-3 py-2 text-right">10.5966</td>
-<td class="px-3 py-2 text-right">269.15</td>
+<td class="px-3 py-2 text-right">10.7500</td>
+<td class="px-3 py-2 text-right">10.54531</td>
+<td class="px-3 py-2 text-right">10.44878</td>
+<td class="px-3 py-2 text-right">10-7/16" (265.11 mm)</td>
 </tr><tr class="hover:bg-amber-50">
 <td class="px-3 py-2"><a href="/npt/12-npt/" class="text-amber-700 font-medium hover:underline">12" NPT</a></td>
 <td class="px-3 py-2 text-right">8</td>
-<td class="px-3 py-2 text-right">12.75</td>
-<td class="px-3 py-2 text-right">12.6688</td>
-<td class="px-3 py-2 text-right">12.5966</td>
-<td class="px-3 py-2 text-right">319.95</td>
+<td class="px-3 py-2 text-right">12.7500</td>
+<td class="px-3 py-2 text-right">12.53281</td>
+<td class="px-3 py-2 text-right">12.43628</td>
+<td class="px-3 py-2 text-right">12-7/16" (315.91 mm)</td>
 </tr></tbody>
 </table>
 </div>
+<p class="text-xs text-gray-500 mt-2">E0 = hand-tight engagement pitch diameter per ASME B1.20.1. Taper: 1 in 16 on diameter (3/4&quot;/ft).</p>
+<p class="text-xs text-gray-500 mt-2">E0 = hand-tight engagement pitch diameter per ASME B1.20.1. Taper: 1 in 16 on diameter (3/4&quot;/ft).</p>
+<p class="text-xs text-gray-500 mt-2">E0 = hand-tight engagement pitch diameter per ASME B1.20.1. Taper: 1 in 16 on diameter (3/4&quot;/ft).</p>
 
 </main>
 <footer class="bg-gray-100 border-t mt-16">
 <div class="max-w-6xl mx-auto px-4 py-10">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Metric Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Metric Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/metric/" class="hover:text-emerald-700">ISO Metric Coarse</a></li>
 <li><a href="/metric-fine/" class="hover:text-emerald-700">ISO Metric Fine</a></li>
@@ -224,7 +227,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Inch Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Inch Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/unc/" class="hover:text-emerald-700">UNC Thread Chart</a></li>
 <li><a href="/unf/" class="hover:text-emerald-700">UNF Thread Chart</a></li>
@@ -234,7 +237,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Pipe Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Pipe Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/pipe-threads/" class="hover:text-emerald-700">NPT Thread Chart</a></li>
 <li><a href="/bsp/" class="hover:text-emerald-700">BSP Thread Chart</a></li>
@@ -242,7 +245,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Tools</h3>
+<div class="font-semibold text-gray-800 mb-3">Tools</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/tap-drill-chart/" class="hover:text-emerald-700">Tap Drill Chart</a></li>
 <li><a href="/calculator/" class="hover:text-emerald-700">Thread Calculator</a></li>

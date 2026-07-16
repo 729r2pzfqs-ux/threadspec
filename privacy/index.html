@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://threadspec.org/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ThreadSpec.org">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#059669">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -41,7 +41,7 @@ ThreadSpec.org
 <a href="/tap-drill-chart/" class="hover:text-emerald-200">Tap Drills</a>
 <a href="/calculator/" class="hover:text-emerald-200">Calculator</a>
 </div>
-<button onclick="document.getElementById('mob-menu').classList.toggle('hidden')" class="md:hidden p-2">
+<button aria-label="Open navigation menu" aria-expanded="false" onclick="var m=document.getElementById('mob-menu');var open=!m.classList.contains('hidden');m.classList.toggle('hidden');this.setAttribute('aria-expanded',String(open?'false':'true'))" class="md:hidden p-2">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
 </button>
 </div>
@@ -80,7 +80,7 @@ ThreadSpec.org
 <p>The site is served as static pages. Our hosting provider may keep standard server logs (IP address, requested URL, timestamp, user agent) for security and operational purposes. We do not combine these logs with any other data.</p>
 
 <h2 class="text-xl font-bold text-gray-900 mt-8 mb-3">Third-Party Content</h2>
-<p>Pages load the Tailwind CSS library and Google Analytics script from third-party content delivery networks. When your browser requests these files, the CDN operator receives your IP address as part of the normal request.</p>
+<p>Pages load the Google Analytics script from a third-party CDN (googletagmanager.com). The site's stylesheet (Tailwind CSS) is self-hosted and loaded directly from this server. When your browser requests these files, the CDN operator receives your IP address as part of the normal request.</p>
 
 <h2 class="text-xl font-bold text-gray-900 mt-8 mb-3">Your Rights</h2>
 <p>Depending on where you live (for example under the GDPR or CCPA), you may have rights to access, correct, or delete personal data. Since we hold no personal data about visitors, such requests are typically best directed to Google for analytics data. For anything else, contact us and we will help.</p>
@@ -97,7 +97,7 @@ ThreadSpec.org
 <div class="max-w-6xl mx-auto px-4 py-10">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Metric Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Metric Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/metric/" class="hover:text-emerald-700">ISO Metric Coarse</a></li>
 <li><a href="/metric-fine/" class="hover:text-emerald-700">ISO Metric Fine</a></li>
@@ -107,7 +107,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Inch Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Inch Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/unc/" class="hover:text-emerald-700">UNC Thread Chart</a></li>
 <li><a href="/unf/" class="hover:text-emerald-700">UNF Thread Chart</a></li>
@@ -117,7 +117,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Pipe Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Pipe Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/pipe-threads/" class="hover:text-emerald-700">NPT Thread Chart</a></li>
 <li><a href="/bsp/" class="hover:text-emerald-700">BSP Thread Chart</a></li>
@@ -125,7 +125,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Tools</h3>
+<div class="font-semibold text-gray-800 mb-3">Tools</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/tap-drill-chart/" class="hover:text-emerald-700">Tap Drill Chart</a></li>
 <li><a href="/calculator/" class="hover:text-emerald-700">Thread Calculator</a></li>
