@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://threadspec.org/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ThreadSpec.org">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#059669">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -41,7 +41,7 @@ ThreadSpec.org
 <a href="/tap-drill-chart/" class="hover:text-emerald-200">Tap Drills</a>
 <a href="/calculator/" class="hover:text-emerald-200">Calculator</a>
 </div>
-<button onclick="document.getElementById('mob-menu').classList.toggle('hidden')" class="md:hidden p-2">
+<button aria-label="Open navigation menu" aria-expanded="false" onclick="var m=document.getElementById('mob-menu');var open=!m.classList.contains('hidden');m.classList.toggle('hidden');this.setAttribute('aria-expanded',String(open?'false':'true'))" class="md:hidden p-2">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
 </button>
 </div>
@@ -65,7 +65,7 @@ ThreadSpec.org
 <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-6 mb-8">
 <div class="grid md:grid-cols-2 gap-6">
 <div>
-<label class="block text-sm font-medium text-gray-700 mb-1">Thread System</label>
+<label for="system" class="block text-sm font-medium text-gray-700 mb-1">Thread System</label>
 <select id="system" onchange="updateUnits()" class="w-full p-2 border rounded">
 <option value="metric">Metric (mm)</option>
 <option value="inch">Inch</option>
@@ -73,11 +73,11 @@ ThreadSpec.org
 </div>
 <div></div>
 <div>
-<label class="block text-sm font-medium text-gray-700 mb-1" id="diam-label">Nominal Diameter (mm)</label>
+<label for="diameter" class="block text-sm font-medium text-gray-700 mb-1" id="diam-label">Nominal Diameter (mm)</label>
 <input type="number" id="diameter" value="10" step="0.1" min="0.1" class="w-full p-2 border rounded" oninput="calculate()">
 </div>
 <div>
-<label class="block text-sm font-medium text-gray-700 mb-1" id="pitch-label">Pitch (mm)</label>
+<label for="pitch" class="block text-sm font-medium text-gray-700 mb-1" id="pitch-label">Pitch (mm)</label>
 <input type="number" id="pitch" value="1.5" step="0.01" min="0.01" class="w-full p-2 border rounded" oninput="calculate()">
 </div>
 </div>
@@ -99,7 +99,7 @@ ThreadSpec.org
 <p><strong>d₂</strong> = d − 0.6495 × P — Pitch diameter</p>
 <p><strong>d₁</strong> = d − 1.2269 × P — Minor diameter (external)</p>
 <p><strong>D₁</strong> = d − 1.0825 × P — Minor diameter (internal / tap drill)</p>
-<p><strong>Aₛ</strong> = (π/4) × ((d₂ + d₃)/2)² — Tensile stress area, where d₃ = d₁ − H/6</p>
+<p><strong>Aₛ</strong> = (π/4) × ((d₂ + d₃)/2)² — Tensile stress area, where d₃ = D₁ − H/6</p>
 </div>
 </section>
 
@@ -108,7 +108,7 @@ ThreadSpec.org
 <div class="space-y-5 text-sm">
 <div>
 <h3 class="font-semibold text-gray-900 mb-1">How is tensile stress area calculated?</h3>
-<p class="text-gray-700">Tensile stress area is calculated as As = (pi/4) × ((d2 + d3)/2)², where d2 is the pitch diameter and d3 = d1 - H/6 (d1 = d - 1.0825P is the basic minor diameter, H is the fundamental triangle height). This is per ISO 898-1. For unified inch threads, the calculator uses the ASME B1.1 formula As = 0.7854 × (D - 0.9743/n)², where n is threads per inch.</p>
+<p class="text-gray-700">Tensile stress area is calculated as As = (pi/4) × ((d2 + d3)/2)², where d2 is the pitch diameter and d3 = D1 - H/6 (D1 = d - 1.0825P is the internal minor diameter, H is the fundamental triangle height). This is per ISO 898-1. For unified inch threads, the calculator uses the ASME B1.1 formula As = 0.7854 × (D - 0.9743/n)², where n is threads per inch.</p>
 </div>
 <div>
 <h3 class="font-semibold text-gray-900 mb-1">What formulas does this calculator use?</h3>
@@ -122,7 +122,7 @@ ThreadSpec.org
 <div class="max-w-6xl mx-auto px-4 py-10">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Metric Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Metric Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/metric/" class="hover:text-emerald-700">ISO Metric Coarse</a></li>
 <li><a href="/metric-fine/" class="hover:text-emerald-700">ISO Metric Fine</a></li>
@@ -132,7 +132,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Inch Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Inch Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/unc/" class="hover:text-emerald-700">UNC Thread Chart</a></li>
 <li><a href="/unf/" class="hover:text-emerald-700">UNF Thread Chart</a></li>
@@ -142,7 +142,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Pipe Threads</h3>
+<div class="font-semibold text-gray-800 mb-3">Pipe Threads</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/pipe-threads/" class="hover:text-emerald-700">NPT Thread Chart</a></li>
 <li><a href="/bsp/" class="hover:text-emerald-700">BSP Thread Chart</a></li>
@@ -150,7 +150,7 @@ ThreadSpec.org
 </ul>
 </div>
 <div>
-<h3 class="font-semibold text-gray-800 mb-3">Tools</h3>
+<div class="font-semibold text-gray-800 mb-3">Tools</div>
 <ul class="space-y-1 text-sm text-gray-600">
 <li><a href="/tap-drill-chart/" class="hover:text-emerald-700">Tap Drill Chart</a></li>
 <li><a href="/calculator/" class="hover:text-emerald-700">Thread Calculator</a></li>
@@ -187,17 +187,18 @@ function calculate() {
     const sys = document.getElementById('system').value;
     let d = parseFloat(document.getElementById('diameter').value);
     let p_input = parseFloat(document.getElementById('pitch').value);
-    if (isNaN(d) || isNaN(p_input) || d <= 0 || p_input <= 0) return;
+    if (isNaN(d) || isNaN(p_input) || d <= 0 || p_input <= 0) {
+        document.querySelector('#results-table tbody').innerHTML = '<tr><td class="px-4 py-2 text-red-600" colspan="2">Invalid input — enter a positive diameter and pitch.</td></tr>';
+        return;
+    }
 
-    let P, d_mm, unit;
+    let P, unit;
     let asmeAs = null;
     if (sys === 'metric') {
         P = p_input;
-        d_mm = d;
         unit = 'mm';
     } else {
         P = 1.0 / p_input;  // TPI to pitch in inches
-        d_mm = d * 25.4;
         asmeAs = 0.7854 * Math.pow(d - 0.9743 / p_input, 2) * 645.16;  // ASME B1.1, converted to mm²
         P = P * 25.4;  // convert to mm for formula
         d = d * 25.4;  // convert to mm
@@ -208,6 +209,22 @@ function calculate() {
     const d2 = d - 0.6495 * P;
     const d1 = d - 1.2269 * P;
     const D1 = d - 1.0825 * P;
+    if (D1 <= 0) {
+        document.querySelector('#results-table tbody').innerHTML = '<tr><td class="px-4 py-2 text-red-600" colspan="2">Pitch too large — minor diameter would be negative.</td></tr>';
+        return;
+    }
+    if (D1 <= 0) {
+        document.querySelector('#results-table tbody').innerHTML = '<tr><td class="px-4 py-2 text-red-600" colspan="2">Pitch too large — minor diameter would be negative.</td></tr>';
+        return;
+    }
+    if (D1 <= 0) {
+        document.querySelector('#results-table tbody').innerHTML = '<tr><td class="px-4 py-2 text-red-600" colspan="2">Pitch too large — minor diameter would be negative.</td></tr>';
+        return;
+    }
+    if (D1 <= 0) {
+        document.querySelector('#results-table tbody').innerHTML = '<tr><td class="px-4 py-2 text-red-600" colspan="2">Pitch too large — minor diameter would be negative.</td></tr>';
+        return;
+    }
     const threadDepth = 5 * H / 8;
     const d3 = D1 - H / 6;
     const As = asmeAs !== null ? asmeAs : (Math.PI / 4) * Math.pow((d2 + d3) / 2, 2);
@@ -231,5 +248,5 @@ calculate();
 </script>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Thread Calculator","url":"https://threadspec.org/calculator/","applicationCategory":"Engineering","operatingSystem":"Web"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is tensile stress area calculated?","acceptedAnswer":{"@type":"Answer","text":"Tensile stress area is calculated as As = (pi/4) × ((d2 + d3)/2)², where d2 is the pitch diameter and d3 = d1 - H/6 (d1 = d - 1.0825P is the basic minor diameter, H is the fundamental triangle height). This is per ISO 898-1. For unified inch threads, the calculator uses the ASME B1.1 formula As = 0.7854 × (D - 0.9743/n)², where n is threads per inch."}},{"@type":"Question","name":"What formulas does this calculator use?","acceptedAnswer":{"@type":"Answer","text":"This calculator uses ISO 724 formulas for metric threads and ASME B1.1 for unified inch threads. Pitch diameter: d2 = d - 0.6495P. Minor diameter: d1 = d - 1.2269P. Thread depth: 5H/8 where H = (sqrt(3)/2) × P."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is tensile stress area calculated?","acceptedAnswer":{"@type":"Answer","text":"Tensile stress area is calculated as As = (pi/4) × ((d2 + d3)/2)², where d2 is the pitch diameter and d3 = D1 - H/6 (D1 = d - 1.0825P is the internal minor diameter, H is the fundamental triangle height). This is per ISO 898-1. For unified inch threads, the calculator uses the ASME B1.1 formula As = 0.7854 × (D - 0.9743/n)², where n is threads per inch."}},{"@type":"Question","name":"What formulas does this calculator use?","acceptedAnswer":{"@type":"Answer","text":"This calculator uses ISO 724 formulas for metric threads and ASME B1.1 for unified inch threads. Pitch diameter: d2 = d - 0.6495P. Minor diameter: d1 = d - 1.2269P. Thread depth: 5H/8 where H = (sqrt(3)/2) × P."}}]}</script>
 </body></html>
