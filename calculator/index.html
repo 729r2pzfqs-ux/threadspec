@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Thread Calculator — Calculate Dimensions for Any Thread</title>
-<meta name="description" content="Calculate thread pitch diameter, minor diameter, tap drill size, and stress area for metric or inch threads. Enter any diameter and pitch.">
+<title>Thread Calculator — Pitch Ø, Minor Ø &amp; Tap Drill for Any Thread</title>
+<meta name="description" content="Calculate pitch Ø, minor Ø, tap drill, and stress area for any metric or inch thread. ISO metric, UNC, UNF, and custom pitch supported. Instant results.">
 <link rel="canonical" href="https://threadspec.org/calculator/">
 <link rel="alternate" hreflang="en" href="https://threadspec.org/calculator/">
 <link rel="alternate" hreflang="x-default" href="https://threadspec.org/calculator/">
-<meta property="og:title" content="Thread Calculator — Calculate Dimensions for Any Thread">
-<meta property="og:description" content="Calculate thread pitch diameter, minor diameter, tap drill size, and stress area for metric or inch threads. Enter any diameter and pitch.">
+<meta property="og:title" content="Thread Calculator — Pitch Ø, Minor Ø &amp; Tap Drill for Any Thread">
+<meta property="og:description" content="Calculate pitch Ø, minor Ø, tap drill, and stress area for any metric or inch thread. ISO metric, UNC, UNF, and custom pitch supported. Instant results.">
 <meta property="og:url" content="https://threadspec.org/calculator/">
 <meta property="og:image" content="https://threadspec.org/og-image.png">
 <meta property="og:type" content="website">
@@ -248,5 +248,5 @@ calculate();
 </script>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Thread Calculator","url":"https://threadspec.org/calculator/","applicationCategory":"Engineering","operatingSystem":"Web"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is tensile stress area calculated?","acceptedAnswer":{"@type":"Answer","text":"Tensile stress area is calculated as As = (pi/4) × ((d2 + d3)/2)², where d2 is the pitch diameter and d3 = D1 - H/6 (D1 = d - 1.0825P is the internal minor diameter, H is the fundamental triangle height). This is per ISO 898-1. For unified inch threads, the calculator uses the ASME B1.1 formula As = 0.7854 × (D - 0.9743/n)², where n is threads per inch."}},{"@type":"Question","name":"What formulas does this calculator use?","acceptedAnswer":{"@type":"Answer","text":"This calculator uses ISO 724 formulas for metric threads and ASME B1.1 for unified inch threads. Pitch diameter: d2 = d - 0.6495P. Minor diameter: d1 = d - 1.2269P. Thread depth: 5H/8 where H = (sqrt(3)/2) × P."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate thread pitch diameter?","acceptedAnswer":{"@type":"Answer","text":"For metric threads: d₂ = d − 0.6495 × P. For inch threads: d₂ = d − 0.6495 / n (where d = major diameter, P = pitch in mm, n = TPI). The pitch diameter is where thread width equals space width."}},{"@type":"Question","name":"How do I calculate tap drill size?","acceptedAnswer":{"@type":"Answer","text":"The standard tap drill is d − P (nominal diameter minus pitch) for approximately 75% thread engagement. For M10×1.5: 10 − 1.5 = 8.5 mm. For 1/4-20 UNC: 0.250 − 1/20 = 0.200″, nearest standard is #7 (0.201″)."}},{"@type":"Question","name":"What is tensile stress area?","acceptedAnswer":{"@type":"Answer","text":"Tensile stress area (Aₛ) = π/4 × ((d₂ + d₃)/2)² where d₂ is the pitch diameter and d₃ = D₁ − H/6. It represents the effective cross-sectional area under tension per ISO 898 and ASME B1.1."}}]}</script>
 </body></html>
