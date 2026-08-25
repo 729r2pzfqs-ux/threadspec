@@ -213,18 +213,6 @@ function calculate() {
         document.querySelector('#results-table tbody').innerHTML = '<tr><td class="px-4 py-2 text-red-600" colspan="2">Pitch too large — minor diameter would be negative.</td></tr>';
         return;
     }
-    if (D1 <= 0) {
-        document.querySelector('#results-table tbody').innerHTML = '<tr><td class="px-4 py-2 text-red-600" colspan="2">Pitch too large — minor diameter would be negative.</td></tr>';
-        return;
-    }
-    if (D1 <= 0) {
-        document.querySelector('#results-table tbody').innerHTML = '<tr><td class="px-4 py-2 text-red-600" colspan="2">Pitch too large — minor diameter would be negative.</td></tr>';
-        return;
-    }
-    if (D1 <= 0) {
-        document.querySelector('#results-table tbody').innerHTML = '<tr><td class="px-4 py-2 text-red-600" colspan="2">Pitch too large — minor diameter would be negative.</td></tr>';
-        return;
-    }
     const threadDepth = 5 * H / 8;
     const d3 = D1 - H / 6;
     const As = asmeAs !== null ? asmeAs : (Math.PI / 4) * Math.pow((d2 + d3) / 2, 2);
