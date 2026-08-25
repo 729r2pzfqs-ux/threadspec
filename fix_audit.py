@@ -647,6 +647,8 @@ def footer_html():
 GA_SCRIPT = '''<script async src="https://www.googletagmanager.com/gtag/js?id=G-EPVR72CBWM"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-EPVR72CBWM');</script>'''
 
+AHREFS_SCRIPT = '''<script src="https://analytics.ahrefs.com/analytics.js" data-key="Mltx4IlGmyyajJD6d+8LLg" async></script>'''
+
 def head_common(title, desc, canonical, og_image=None):
     if og_image is None:
         og_image = "https://threadspec.org/og-image.png"
@@ -670,7 +672,8 @@ def head_common(title, desc, canonical, og_image=None):
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/tailwind.css">
-{GA_SCRIPT}'''
+{GA_SCRIPT}
+{AHREFS_SCRIPT}'''
 
 
 def write_file(path, content):
@@ -1559,6 +1562,7 @@ def create_npt_index():
 <link rel="canonical" href="https://threadspec.org/pipe-threads/">
 <title>NPT Threads — Redirecting to NPT Thread Chart</title>
 <meta name="robots" content="noindex">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="Mltx4IlGmyyajJD6d+8LLg" async></script>
 </head>
 <body>
 <p>Redirecting to <a href="/pipe-threads/">NPT Thread Chart</a>...</p>
