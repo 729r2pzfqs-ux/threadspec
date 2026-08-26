@@ -61,6 +61,26 @@ def first_val(text):
     m = re.match(r'^([^(]+)', text)
     return m.group(1).strip() if m else text
 
+def paren_val(text):
+    """Return the portion inside the parentheses of 'X" (Y mm)'."""
+    if not text:
+        return ''
+    m = re.search(r'\(([^)]+)\)', text)
+    return m.group(1).strip() if m else ''
+
+
+def nominal_size(desig):
+    """'1-1/2" NPT' -> 1.5, '3/4" NPT' -> 0.75, '10" NPT' -> 10.0."""
+    m = re.match(r'^(\d+)-(\d+)/(\d+)', desig)
+    if m:
+        return int(m.group(1)) + int(m.group(2)) / int(m.group(3))
+    m = re.match(r'^(\d+)/(\d+)', desig)
+    if m:
+        return int(m.group(1)) / int(m.group(2))
+    m = re.match(r'^(\d+)', desig)
+    return float(m.group(1)) if m else 0.0
+
+
 def drill_short(text):
     """'NAME (X.XXXX" / Y mm)' → 'NAME (X.XXXX")'. Strips metric portion."""
     if not text:
@@ -247,23 +267,33 @@ def proc_npt_detail(path):
 
     new_title = f'{desig} Tap Drill: {ds} — ASME B1.20.1'
 
-    parts = [f'{desig} (ASME B1.20.1): tap drill {tap}.']
-    if od:
-        parts.append(f'OD {first_val(od)},')
-    if tpi:
-        parts.append(f'TPI {tpi}.')
-    if pitch_e0:
-        parts.append(f'Pitch Ø at E0: {first_val(pitch_e0)}.')
-    parts.append('Taper: 3/4″/ft (1:16 on diameter).')
-    new_desc = ' '.join(parts)
+    # Answer-first description: tap drill leads, then the specs that differ
+    # size-to-size, then a use note keyed to the nominal bore. Target 120-158.
+    nom = nominal_size(desig)
+    if nom <= 0.25:
+        use = 'Used on gauge and instrument ports.'
+    elif nom <= 0.75:
+        use = 'Used on air and hydraulic fittings.'
+    elif nom <= 2:
+        use = 'Used on process piping and pump ports.'
+    else:
+        use = 'Used on large-bore process piping.'
 
+    parts = [f'{desig} tap drill: {tap}']
+    parts.append(f', {tpi} TPI' if tpi else '')
+    parts.append(' — ASME B1.20.1.')
+    if od:
+        parts.append(f' OD {first_val(od)} / {paren_val(od)}.')
+    parts.append(f' 1:16 taper. {use}')
+    new_desc = ''.join(p for p in parts if p)
+
+    if len(new_desc) > 158 and pitch_e0:
+        # Rare long-designation fallback: drop the OD, keep the answer.
+        new_desc = (f'{desig} tap drill: {tap}, {tpi} TPI — ASME B1.20.1. '
+                    f'Pitch Ø at E0 {first_val(pitch_e0)}, 1:16 taper. {use}')
     if len(new_desc) > 158:
-        parts2 = [f'{desig} (ASME B1.20.1): tap drill {tap}.']
-        if od:
-            parts2.append(f'OD {first_val(od)},')
-        if tpi:
-            parts2.append(f'TPI {tpi}. Taper: 1:16.')
-        new_desc = ' '.join(parts2)
+        new_desc = (f'{desig} tap drill: {tap}, {tpi} TPI — ASME B1.20.1. '
+                    f'1:16 taper. {use}')
 
     qa = [
         (
@@ -299,9 +329,10 @@ def proc_bsp_detail(path):
 
     desig = designation_from_h1(html)   # e.g. 'G1/2" BSP'
 
-    tap = extract_span(html, 'amber')
-    od  = extract_td(html, 'Outside Diameter')
-    tpi = extract_td(html, 'TPI')
+    tap   = extract_span(html, 'amber')
+    od    = extract_td(html, 'Outside Diameter')
+    tpi   = extract_td(html, 'TPI')
+    pitch = extract_td(html, 'Pitch')
 
     if not tap:
         print(f'  SKIP: {path}')
@@ -310,20 +341,36 @@ def proc_bsp_detail(path):
     tpi_str = tpi or '?'
     new_title = f'{desig} Tap Drill: {tap}, TPI {tpi_str} — ISO 228'
 
-    parts = [f'{desig} G-thread (ISO 228): tap drill {tap}.']
+    # Answer-first description: tap drill leads, then per-size numbers, then a
+    # use note keyed to the thread series (TPI). Target 120-158.
+    BSP_USE = {
+        '28': 'Used on gauges and miniature pneumatics.',
+        '19': 'Used on air tools and gauge ports.',
+        '14': 'Used on hydraulic ports and plumbing.',
+        '11': 'Used on pumps and industrial pipework.',
+    }
+    use = BSP_USE.get(tpi_str, 'Used on industrial pipe and hydraulic ports.')
+
+    parts = [f'{desig} tap drill: {tap} (ISO 228).']
     if od:
-        parts.append(f'OD {first_val(od)},')
+        parts.append(f'OD {first_val(od)} / {paren_val(od)},')
     if tpi:
-        parts.append(f'TPI {tpi}, 55° Whitworth profile.')
-    parts.append('Parallel thread — standard in UK, Europe, Asia, Australia.')
+        parts.append(f'{tpi} TPI,')
+    if pitch:
+        parts.append(f'{paren_val(pitch)} pitch,')
+    parts.append('55° Whitworth parallel.')
+    parts.append(use)
     new_desc = ' '.join(parts)
 
     if len(new_desc) > 158:
-        parts2 = [f'{desig} BSP (ISO 228): tap drill {tap}.']
+        # Long-designation fallback: drop the pitch, keep the answer.
+        parts2 = [f'{desig} tap drill: {tap} (ISO 228).']
         if od:
-            parts2.append(f'OD {first_val(od)},')
+            parts2.append(f'OD {first_val(od)} / {paren_val(od)},')
         if tpi:
-            parts2.append(f'TPI {tpi}. 55° Whitworth, parallel.')
+            parts2.append(f'{tpi} TPI,')
+        parts2.append('55° Whitworth parallel.')
+        parts2.append(use)
         new_desc = ' '.join(parts2)
 
     qa = [
@@ -478,12 +525,9 @@ def proc_unc_index(path):
 def proc_unf_index(path):
     html = open(path, encoding='utf-8').read()
     t = 'UNF Thread Chart — 24 Sizes with Tap Drills & Pitch Diameters'
-    d = ('Tap drill sizes and full dimensions for all 24 UNF thread sizes (#0-80 to 1-1/2-12). '
-         '1/4-28: #3 drill; 1/2-20: 29/64″; 3/4-16: 11/16″. '
-         'Major, pitch, minor diameters per ASME B1.1.')
-    if len(d) > 158:
-        d = ('Tap drills for all 24 UNF sizes (#0-80 to 1-1/2-12). '
-             '1/4-28: #3; 1/2-20: 29/64″; 3/4-16: 11/16″. Per ASME B1.1.')
+    d = ('Tap drills for all 24 UNF thread sizes, #0-80 to 1-1/2-12. '
+         '1/4-28: #3; 1/2-20: 29/64″; 3/4-16: 11/16″. '
+         'Major, pitch, minor Ø and stress areas per ASME B1.1.')
     qa = [
         (
             'What is the tap drill for 1/4-28 UNF?',
@@ -513,12 +557,9 @@ def proc_unf_index(path):
 def proc_unef_index(path):
     html = open(path, encoding='utf-8').read()
     t = 'UNEF Thread Chart — Extra Fine Sizes with Tap Drills & TPI'
-    d = ('Tap drill sizes and full dimensions for UNEF (Unified National Extra Fine) thread sizes. '
-         '1/2-28 UNEF: 15/32″ drill; 7/8-20 UNEF: 53/64″; 1″-20 UNEF: 61/64″. '
-         'Per ASME B1.1.')
-    if len(d) > 158:
-        d = ('Tap drills for UNEF extra fine thread sizes. '
-             '1/2-28: 15/32″; 7/8-20: 53/64″; 1″-20: 61/64″. Per ASME B1.1.')
+    d = ('Tap drills for every UNEF extra-fine thread size. '
+         '1/2-28: 15/32″; 7/8-20: 53/64″; 1″-20: 61/64″. '
+         'Major, pitch and minor Ø plus TPI, per ASME B1.1.')
     qa = [
         (
             'What is UNEF thread used for?',
@@ -660,14 +701,10 @@ def proc_npt_index(path):   # pipe-threads/index.html
 
 def proc_bsp_index(path):
     html = open(path, encoding='utf-8').read()
-    t = 'BSP G-Thread Chart — 17 Sizes: Tap Drills & OD | ISO 228'
-    d = ('Tap drill sizes and full dimensions for 17 BSP parallel G-thread sizes (G1/8″ to G4″). '
-         'G1/4: 11.8 mm drill; G1/2: 19.0 mm; G3/4: 24.5 mm. '
-         '55° Whitworth profile per ISO 228.')
-    if len(d) > 158:
-        d = ('Tap drills for 17 BSP parallel G-thread sizes (G1/8″ to G4″). '
-             'G1/4: 11.8 mm; G1/2: 19.0 mm; G3/4: 24.5 mm. '
-             '55° Whitworth, ISO 228.')
+    t = 'BSP G-Thread Chart — 21 Sizes: Tap Drills & OD | ISO 228'
+    d = ('Tap drills for 21 BSP parallel G-thread sizes (G1/16″ to G4″). '
+         'G1/4: 11.8 mm; G1/2: 19.0 mm; G3/4: 24.5 mm. '
+         '55° Whitworth, ISO 228.')
     qa = [
         (
             'What is the tap drill for G1/4 BSP?',
