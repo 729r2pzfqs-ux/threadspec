@@ -649,6 +649,13 @@ GA_SCRIPT = '''<script async src="https://www.googletagmanager.com/gtag/js?id=G-
 
 AHREFS_SCRIPT = '''<script src="https://analytics.ahrefs.com/analytics.js" data-key="Mltx4IlGmyyajJD6d+8LLg" async></script>'''
 
+ADSENSE_CLIENT = "ca-pub-5861928596436289"
+
+ADSENSE_SCRIPT = (
+    f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+    f'?client={ADSENSE_CLIENT}" crossorigin="anonymous"></script>'
+) if ADSENSE_CLIENT else ""
+
 def head_common(title, desc, canonical, og_image=None):
     if og_image is None:
         og_image = "https://threadspec.org/og-image.png"
@@ -673,7 +680,8 @@ def head_common(title, desc, canonical, og_image=None):
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/tailwind.css">
 {GA_SCRIPT}
-{AHREFS_SCRIPT}'''
+{AHREFS_SCRIPT}
+{ADSENSE_SCRIPT}'''
 
 
 def write_file(path, content):
@@ -1553,7 +1561,7 @@ def fix_tap_drill_chart():
 def create_npt_index():
     print("\n=== Creating /npt/index.html stub ===")
     path = os.path.join(BASE, "npt", "index.html")
-    html = '''<!DOCTYPE html>
+    html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1563,6 +1571,7 @@ def create_npt_index():
 <title>NPT Threads — Redirecting to NPT Thread Chart</title>
 <meta name="robots" content="noindex">
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="Mltx4IlGmyyajJD6d+8LLg" async></script>
+{ADSENSE_SCRIPT}
 </head>
 <body>
 <p>Redirecting to <a href="/pipe-threads/">NPT Thread Chart</a>...</p>
@@ -1574,6 +1583,13 @@ def create_npt_index():
 # ============================================================
 # ADD .gitignore
 # ============================================================
+def create_ads_txt():
+    print("\n=== Creating ads.txt ===")
+    path = os.path.join(BASE, "ads.txt")
+    content = "google.com, pub-5861928596436289, DIRECT, f08c47fec0942fa0\n"
+    write_file(path, content)
+
+
 def create_gitignore():
     print("\n=== Creating .gitignore ===")
     path = os.path.join(BASE, ".gitignore")
@@ -1704,6 +1720,7 @@ if __name__ == "__main__":
 
     delete_placeholder()
     create_gitignore()
+    create_ads_txt()
     create_npt_index()
 
     fix_404()
