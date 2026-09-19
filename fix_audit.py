@@ -644,8 +644,13 @@ def footer_html():
 </div>
 </footer>'''
 
+# Consent Mode defaults. This has to be queued before gtag/js is requested,
+# so the dataLayer shim lives here rather than in GA_SCRIPT, and GA_SCRIPT is
+# left with just the js/config calls that run after it.
+CONSENT_SCRIPT = '''<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>'''
+
 GA_SCRIPT = '''<script async src="https://www.googletagmanager.com/gtag/js?id=G-EPVR72CBWM"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-EPVR72CBWM');</script>'''
+<script>gtag('js',new Date());gtag('config','G-EPVR72CBWM');</script>'''
 
 AHREFS_SCRIPT = '''<script src="https://analytics.ahrefs.com/analytics.js" data-key="Mltx4IlGmyyajJD6d+8LLg" async></script>'''
 
@@ -679,9 +684,10 @@ def head_common(title, desc, canonical, og_image=None):
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/tailwind.css">
+{CONSENT_SCRIPT}
+{ADSENSE_SCRIPT}
 {GA_SCRIPT}
-{AHREFS_SCRIPT}
-{ADSENSE_SCRIPT}'''
+{AHREFS_SCRIPT}'''
 
 
 def write_file(path, content):
