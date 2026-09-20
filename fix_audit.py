@@ -653,7 +653,7 @@ def footer_html():
 # carries no region, so it is the global fallback and grants storage to every
 # visitor outside that list. A later call wins only for regions it names, so
 # the unscoped grant does not override the denial inside the EEA.
-CONSENT_SCRIPT = '''<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500,'region':['BE','BG','CZ','DK','DE','EE','IE','EL','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE','GB','CH','IS','LI','NO']});gtag('consent','default',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});</script>'''
+CONSENT_SCRIPT = '''<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500,'region':['BE','BG','CZ','DK','DE','EE','IE','GR','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE','GB','CH','IS','LI','NO']});gtag('consent','default',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});</script>'''
 
 GA_SCRIPT = '''<script async src="https://www.googletagmanager.com/gtag/js?id=G-EPVR72CBWM"></script>
 <script>gtag('js',new Date());gtag('config','G-EPVR72CBWM');</script>'''
