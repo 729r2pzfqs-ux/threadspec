@@ -232,7 +232,8 @@ def make_npt(r):
         n = r['drill_' + k]
         t[k] = None if n is None else {'name': drill_label(n), 'in': drills.inch_drill(n),
                                        'mm': drills.inch_drill(n) * IN}
-    t['main'] = t['std'] or t['common']
+    # the size printed on shop charts leads; the ASME B1.20.1 suggestion is shown beside it
+    t['main'] = t['common'] or t['std']
     return t
 
 

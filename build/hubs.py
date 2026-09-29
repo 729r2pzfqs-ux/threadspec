@@ -280,20 +280,21 @@ def npt_hub(fams):
     for t in ts:
         m = t['main']
         rows.append([f'<a href="{t["url"]}">{t["plain"]}</a>', g(t['tpi']), f"{t['D']:.3f}",
-                     f"{t['D'] * IN:.2f}", f"{t['E0']:.5f}", f"{t['E1']:.5f}", f"{t['L1']:.3f}",
-                     f"{t['L2']:.4f}", f"{t['K0']:.4f}", m['name'] if m else '—',
-                     t['common']['name'] if t['common'] else '—'])
+                     f"{t['D'] * IN:.2f}", m['name'] if m else '—',
+                     t['std']['name'] if t['std'] else '—', f"{t['E0']:.5f}", f"{t['E1']:.5f}",
+                     f"{t['L1']:.3f}", f"{t['L2']:.4f}", f"{t['K0']:.4f}"])
     title = 'NPT Thread Chart: 19 Sizes, Tap Drills & OD, ASME B1.20.1'
     desc = ('NPT pipe thread chart, 1/16 to 12 in: TPI, pipe OD, pitch diameters and tap drills. 1/4 NPT: 7/16; '
-            '1/2 NPT: 45/64 (23/32 on many charts). ASME B1.20.1.')
+            '1/2 NPT: 23/32; 3/4 NPT: 59/64; 1 NPT: 1-5/32. ASME B1.20.1.')
     ex = next(t for t in ts if t['label'] == '1/2')
     b = ['<h1>NPT Thread Chart (National Pipe Taper)</h1>',
          '<p class="lead">All 19 NPT sizes from 1/16 to 12 inch, with threads per inch, pipe outside diameter, '
          'pitch diameters, engagement lengths and tap drills from ASME B1.20.1. NPT is the taper pipe thread '
          'used in the United States and Canada.</p>',
-         table(['Thread', 'TPI', 'Pipe OD (in)', 'Pipe OD (mm)', 'E0 (in)', 'E1 (in)', 'L1 (in)', 'L2 (in)',
-                'K0 (in)', 'Tap drill', 'Common chart drill'], rows, 'chart', label='NPT thread chart',
-               caption='E0, E1: pitch diameter at the pipe end and at the hand-tight plane. L1: hand-tight '
+         table(['Thread', 'TPI', 'Pipe OD (in)', 'Pipe OD (mm)', 'Tap drill', 'ASME B1.20.1 drill', 'E0 (in)',
+                'E1 (in)', 'L1 (in)', 'L2 (in)', 'K0 (in)'], rows, 'chart', label='NPT thread chart',
+               caption='Tap drill: the size on standard charts. ASME B1.20.1 drill: the size the standard '
+                       'suggests for tapping without reaming. E0, E1: pitch diameter at the pipe end and at the hand-tight plane. L1: hand-tight '
                        'engagement. L2: effective thread length. K0: minor diameter at the pipe end.'),
          '<section><h2>Where the diameters are measured</h2>'
          + svg.figure(svg.npt_view(ex, lambda v, nd=5: f"{v:.{nd}f}"),
@@ -304,12 +305,13 @@ def npt_hub(fams):
            'on by hand, and E<sub>2</sub> at the end of the effective thread. The three are tied together by '
            'the taper: E<sub>1</sub> = E<sub>0</sub> + L<sub>1</sub> ÷ 16.</p></section>',
          '<section><h2>Two tap drill columns</h2>'
-         '<p>The chart gives two drills because published sources differ. The first column is the drill '
-         'ASME B1.20.1 suggests for tapping without reaming, which the standard lists up to the 2-1/2 size; '
-         'above that the value is from Machinery’s Handbook. The second column is the size found on '
-         'most printed shop charts. From 1/4 NPT upward those chart values match the drills the standard gives '
-         'for straight pipe threads (NPSC), so they are a little large for a taper tap: easier to tap, '
-         'with shallower threads at the bottom of the hole.</p>'
+         '<p>The chart gives two drills because published sources differ. The first column is the size '
+         'printed on standard tap drill charts and in Machinery’s Handbook, and is the one most shops '
+         'use. The second is the drill ASME B1.20.1 suggests in its appendix for tapping without reaming, '
+         'which the standard lists up to the 2-1/2 size.</p>'
+         '<p>Where the two differ, the chart size is the larger by 1/64 in. It taps more easily but leaves '
+         'shallower threads at the bottom of the hole, so the smaller drill is the better choice for high '
+         'pressure or soft material.</p>'
          '<p>No drill is published for 8, 10 and 12 inch NPT. Threads of that size are bored or milled to the '
          'minor diameter K<sub>0</sub>.</p></section>',
          '<section><h2>Nominal size is not a dimension</h2>'
@@ -323,8 +325,8 @@ def npt_hub(fams):
                'The tap drill for 1/4-18 NPT is 7/16 in (0.4375 in, 11.11 mm). The standard and the usual '
                'shop charts agree on this size.'),
               ('What is the tap drill for 1/2 NPT?',
-               'ASME B1.20.1 suggests 45/64 in (0.7031 in) for tapping without reaming. Many charts list '
-               '23/32 in (0.7188 in), which is easier to tap but leaves shallower threads.'),
+               'The tap drill for 1/2-14 NPT is 23/32 in (0.7188 in, 18.26 mm). ASME B1.20.1 suggests the '
+               'slightly smaller 45/64 in (0.7031 in), which is harder to tap but leaves a fuller thread.'),
               ('Do NPT threads need sealant?',
                'Yes. NPT threads wedge together but leave a spiral leak path at the crests and roots, so '
                'ASME B1.20.1 calls for a sealant such as PTFE tape or pipe compound for a pressure-tight '
@@ -434,15 +436,14 @@ def tap_chart(fams):
     for t in fams['npt']:
         s, r, c = t['std'], t['ream'], t['common']
         rows.append([f'<a href="{t["url"]}">{t["plain"]}</a>',
-                     s['name'] if s else '—', f"{s['in']:.4f}" if s else '—',
-                     r['name'] if r else '—', c['name'] if c else '—', f"{c['in']:.4f}" if c else '—',
-                     f"{t['K0']:.4f}"])
+                     c['name'] if c else '—', f"{c['in']:.4f}" if c else '—', f"{c['mm']:.2f}" if c else '—',
+                     s['name'] if s else '—', r['name'] if r else '—', f"{t['K0']:.4f}"])
     secs.append('<section id="npt"><h2>NPT tap drills</h2>'
-                + table(['Thread', 'Drill, no reaming', '(in)', 'Drill before taper reaming',
-                         'Common chart drill', '(in)', 'Minor Ø K0 (in)'], rows, 'chart',
+                + table(['Thread', 'Tap drill', 'Drill (in)', 'Drill (mm)', 'ASME B1.20.1, no reaming',
+                         'ASME B1.20.1, before reaming', 'Minor Ø K0 (in)'], rows, 'chart',
                         label='NPT tap drills',
-                        caption='First two drill columns: ASME B1.20.1 Appendix. Common chart: Machinery’s '
-                                'Handbook and shop wall charts.')
+                        caption='Tap drill: standard shop charts and Machinery’s Handbook. The two ASME '
+                                'columns are the drills suggested in the appendix of ASME B1.20.1.')
                 + '<p class="small"><a href="/pipe-threads/">Full NPT chart and why the columns differ</a></p></section>')
     rows = [[f'<a href="{t["url"]}">{t["name"]}</a>', g(t['drill_mm'], 2), f"{t['drill_in']:.4f}",
              f"{(t['d'] - t['drill_mm']) / (2 * t['h']) * 100:.0f}%", f"{t['d1']:.3f}"] for t in fams['bsp']]
