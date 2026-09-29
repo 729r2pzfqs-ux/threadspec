@@ -1,31 +1,38 @@
 # ThreadSpec.org
 
-> Complete thread specification reference with 207 thread sizes across ISO metric, UNC, UNF, UNEF, NPT, and BSP standards. All dimensions calculated from ISO 724 and ASME B1.1 formulas.
+> Reference for screw thread dimensions, tolerance limits and tap drills: 214 threads across ISO metric, Unified inch (UNC, UNF, UNEF), NPT and BSP. Diameters are computed from the ISO 724 and ASME B1.1 formulas and checked against the tables in the standards.
 
-## Main Sections
+## Thread charts
 
-- [Metric Coarse Threads](https://threadspec.org/metric/): 36 ISO metric coarse thread sizes (M1–M68) with pitch, major/pitch/minor diameters, tap drills, and stress areas
-- [Metric Fine Threads](https://threadspec.org/metric-fine/): 56 ISO metric fine pitch thread sizes
-- [UNC Threads](https://threadspec.org/unc/): 33 Unified National Coarse thread sizes per ASME B1.1
-- [UNF Threads](https://threadspec.org/unf/): 24 Unified National Fine thread sizes
-- [UNEF Threads](https://threadspec.org/unef/): 22 Unified National Extra Fine thread sizes
-- [NPT Pipe Threads](https://threadspec.org/pipe-threads/): 19 National Pipe Taper sizes
-- [BSP Pipe Threads](https://threadspec.org/bsp/): 17 British Standard Pipe sizes
+- [ISO metric coarse](https://threadspec.org/metric/): 36 sizes, M1 to M68
+- [ISO metric fine](https://threadspec.org/metric-fine/): 56 sizes, M3x0.35 to M48x3
+- [UNC](https://threadspec.org/unc/): 33 Unified coarse sizes, #1-64 to 4-4
+- [UNF](https://threadspec.org/unf/): 24 Unified fine sizes, #0-80 to 1-1/2-12
+- [UNEF](https://threadspec.org/unef/): 25 Unified extra fine sizes, #12-32 to 1-11/16-18
+- [NPT](https://threadspec.org/pipe-threads/): 19 taper pipe thread sizes, 1/16 to 12, per ASME B1.20.1
+- [BSP](https://threadspec.org/bsp/): 21 parallel pipe thread sizes, G1/16 to G4, per ISO 228-1
 
-## Tools
+## Tools and guides
 
-- [Tap Drill Chart](https://threadspec.org/tap-drill-chart/): Complete tap drill sizes for all thread standards
-- [Thread Calculator](https://threadspec.org/calculator/): Calculate dimensions for any diameter and pitch
-- [NPT vs BSP](https://threadspec.org/npt-vs-bsp/): Comparison of NPT and BSP pipe thread standards
+- [Tap drill chart](https://threadspec.org/tap-drill-chart/): tap drills for every thread with percentage of thread
+- [Thread calculator](https://threadspec.org/calculator/): basic dimensions for any diameter and pitch
+- [Thread identifier](https://threadspec.org/thread-identifier/): find a thread from a measured diameter and pitch
+- [NPT vs BSP](https://threadspec.org/npt-vs-bsp/): differences and compatibility
+- [Coarse vs fine threads](https://threadspec.org/coarse-vs-fine/): what changes with the pitch
+- [Thread terminology](https://threadspec.org/thread-terminology/): definitions and designations
+- [About and sources](https://threadspec.org/about/): how the data is produced and checked
 
-## Key Data Points Per Thread
+## On each thread page
 
-Each thread specification includes: major diameter, pitch diameter, minor diameter (internal and external), thread depth, tensile stress area, tap drill size, proof loads by material grade.
+Basic dimensions in mm and inches (major, pitch and minor diameter, thread height, lead angle, tensile stress area), tolerance limits (6g/6H or 2A/2B), the recommended tap drill with alternative drills and their percentage of thread, clearance holes, and proof loads by property class or SAE grade where the standard covers the size.
 
-## Formulas (ISO 724)
+## Formulas (60 degree threads)
 
-- Pitch diameter: d₂ = d − 0.6495 × P
-- Minor diameter (external): d₁ = d − 1.2269 × P
-- Minor diameter (internal): D₁ = d − 1.0825 × P
-- Thread depth: 5H/8 where H = (√3/2) × P
-- Stress area: As = (π/4) × ((d₂ + d₃)/2)²
+- H = 0.866025 x P
+- Pitch diameter d2 = d - 0.649519 x P
+- Internal minor diameter D1 = d - 1.082532 x P
+- External root diameter d3 = d - 1.226869 x P (ISO metric), d - 1.190785 x P (Unified UNR)
+- Stress area, metric: As = pi/4 x ((d2 + d3)/2)^2; inch: As = 0.7854 x (d - 0.9743/n)^2
+- Percentage of thread = (d - drill) / (1.299038 x P) x 100
+
+Contact: info@threadspec.org
