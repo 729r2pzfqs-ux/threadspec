@@ -3,243 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Thread Calculator — Pitch Ø, Minor Ø &amp; Tap Drill for Any Thread</title>
-<meta name="description" content="Calculate pitch Ø, minor Ø, tap drill, and stress area for any metric or inch thread. ISO metric, UNC, UNF, and custom pitch supported. Instant results.">
+<title>Thread Calculator: Pitch Ø, Minor Ø &amp; Tap Drill, Any Size</title>
+<meta name="description" content="Enter a diameter and pitch or TPI to get pitch Ø, minor Ø, tap drill, lead angle and tensile stress area for any 60° metric or inch thread. Instant results.">
 <link rel="canonical" href="https://threadspec.org/calculator/">
-<link rel="alternate" hreflang="en" href="https://threadspec.org/calculator/">
-<link rel="alternate" hreflang="x-default" href="https://threadspec.org/calculator/">
-<meta property="og:title" content="Thread Calculator — Pitch Ø, Minor Ø &amp; Tap Drill for Any Thread">
-<meta property="og:description" content="Calculate pitch Ø, minor Ø, tap drill, and stress area for any metric or inch thread. ISO metric, UNC, UNF, and custom pitch supported. Instant results.">
+<meta property="og:title" content="Thread Calculator: Pitch Ø, Minor Ø &amp; Tap Drill, Any Size">
+<meta property="og:description" content="Enter a diameter and pitch or TPI to get pitch Ø, minor Ø, tap drill, lead angle and tensile stress area for any 60° metric or inch thread. Instant results.">
 <meta property="og:url" content="https://threadspec.org/calculator/">
 <meta property="og:image" content="https://threadspec.org/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ThreadSpec.org">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#059669">
+<meta name="theme-color" content="#047857">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/tailwind.css">
+<link rel="stylesheet" href="/assets/site.css?v=3974ada7">
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500,'region':['BE','BG','CZ','DK','DE','EE','IE','GR','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE','GB','CH','IS','LI','NO']});gtag('consent','default',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5861928596436289" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPVR72CBWM"></script>
 <script>gtag('js',new Date());gtag('config','G-EPVR72CBWM');</script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="Mltx4IlGmyyajJD6d+8LLg" async></script>
-
-
-<style id="ad-zone-guard">#data-table-zone .google-auto-placed,#data-table-zone ins.adsbygoogle,.data-table-zone .google-auto-placed,.data-table-zone ins.adsbygoogle{display:none !important}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://threadspec.org/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://threadspec.org/calculator/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://threadspec.org/calculator/","name":"Thread Calculator: Pitch Ø, Minor Ø & Tap Drill, Any Size","description":"Enter a diameter and pitch or TPI to get pitch Ø, minor Ø, tap drill, lead angle and tensile stress area for any 60° metric or inch thread. Instant results.","inLanguage":"en","dateModified":"2026-09-29","isPartOf":{"@type":"WebSite","name":"ThreadSpec.org","url":"https://threadspec.org/"},"publisher":{"@type":"Organization","name":"ThreadSpec.org","url":"https://threadspec.org/","logo":"https://threadspec.org/logos/logo-icon-512x512.png","email":"info@threadspec.org"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Thread Calculator","url":"https://threadspec.org/calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"ThreadSpec.org","url":"https://threadspec.org/","logo":"https://threadspec.org/logos/logo-icon-512x512.png","email":"info@threadspec.org"}}</script>
 </head>
-<body class="bg-white text-gray-900">
-<nav class="bg-emerald-700 text-white shadow-lg">
-<div class="max-w-6xl mx-auto px-4">
-<div class="flex items-center justify-between h-16">
-<a href="/" class="text-xl font-bold flex items-center gap-2">
-<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
-ThreadSpec.org
-</a>
-<div class="hidden md:flex items-center gap-6 text-sm">
-<a href="/metric/" class="hover:text-emerald-200">Metric</a>
-<a href="/unc/" class="hover:text-emerald-200">UNC</a>
-<a href="/unf/" class="hover:text-emerald-200">UNF</a>
-<a href="/pipe-threads/" class="hover:text-emerald-200">Pipe</a>
-<a href="/tap-drill-chart/" class="hover:text-emerald-200">Tap Drills</a>
-<a href="/calculator/" class="hover:text-emerald-200">Calculator</a>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav">
+<div class="nav-in">
+<a href="/" class="brand"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>ThreadSpec.org</a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links" onclick="var m=document.getElementById('nav-links');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false')"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<nav class="nav-links" id="nav-links" aria-label="Main"><a href="/metric/">Metric</a><a href="/unc/">UNC</a><a href="/unf/">UNF</a><a href="/pipe-threads/">NPT</a><a href="/bsp/">BSP</a><a href="/tap-drill-chart/">Tap Drills</a><a href="/calculator/" aria-current="page">Calculator</a><a href="/thread-identifier/">Identify</a></nav>
 </div>
-<button aria-label="Open navigation menu" aria-expanded="false" onclick="var m=document.getElementById('mob-menu');var open=!m.classList.contains('hidden');m.classList.toggle('hidden');this.setAttribute('aria-expanded',String(open?'false':'true'))" class="md:hidden p-2">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-</button>
-</div>
-</div>
-<div id="mob-menu" class="hidden md:hidden px-4 pb-3 space-y-2">
-<a href="/metric/" class="block py-1 hover:text-emerald-200">Metric Threads</a>
-<a href="/unc/" class="block py-1 hover:text-emerald-200">UNC Threads</a>
-<a href="/unf/" class="block py-1 hover:text-emerald-200">UNF Threads</a>
-<a href="/pipe-threads/" class="block py-1 hover:text-emerald-200">Pipe Threads</a>
-<a href="/tap-drill-chart/" class="block py-1 hover:text-emerald-200">Tap Drill Chart</a>
-<a href="/calculator/" class="block py-1 hover:text-emerald-200">Calculator</a>
-</div>
-</nav>
-<main class="max-w-4xl mx-auto px-4 py-8">
-<div class="text-sm py-3"><a href="/" class="text-emerald-700 hover:underline">Home</a> <span class="text-gray-400 mx-1">›</span> <span class="text-gray-500">Calculator</span></div>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://threadspec.org/"},{"@type":"ListItem","position":2,"name":"Calculator","item":"https://threadspec.org/calculator/"}]}</script>
-
-<h1 class="text-3xl font-bold text-gray-900 mb-4">Thread Calculator</h1>
-<p class="text-gray-600 mb-8">Calculate thread dimensions from any diameter and pitch. Uses ISO 724 formulas for 60° threads (metric, UNC, UNF).</p>
-
-<div class="bg-emerald-50 border border-emerald-200 rounded-lg p-6 mb-8">
-<div class="grid md:grid-cols-2 gap-6">
-<div>
-<label for="system" class="block text-sm font-medium text-gray-700 mb-1">Thread System</label>
-<select id="system" onchange="updateUnits()" class="w-full p-2 border rounded">
-<option value="metric">Metric (mm)</option>
-<option value="inch">Inch</option>
-</select>
-</div>
-<div></div>
-<div>
-<label for="diameter" class="block text-sm font-medium text-gray-700 mb-1" id="diam-label">Nominal Diameter (mm)</label>
-<input type="number" id="diameter" value="10" step="0.1" min="0.1" class="w-full p-2 border rounded" oninput="calculate()">
-</div>
-<div>
-<label for="pitch" class="block text-sm font-medium text-gray-700 mb-1" id="pitch-label">Pitch (mm)</label>
-<input type="number" id="pitch" value="1.5" step="0.01" min="0.01" class="w-full p-2 border rounded" oninput="calculate()">
-</div>
-</div>
-</div>
-
-<div id="results" class="mb-8">
-<h2 class="text-xl font-bold text-gray-900 mb-3">Calculated Dimensions</h2>
-<div class="overflow-x-auto data-table-zone">
-<table class="w-full text-sm border-collapse border" id="results-table">
-<tbody></tbody>
-</table>
-</div>
-</div>
-
-<section class="bg-gray-50 rounded-lg p-6">
-<h2 class="text-xl font-bold text-gray-900 mb-3">Formulas Used (ISO 724 / ASME B1.1)</h2>
-<div class="text-sm text-gray-700 space-y-1">
-<p><strong>H</strong> = (√3/2) × P — Fundamental triangle height</p>
-<p><strong>d₂</strong> = d − 0.6495 × P — Pitch diameter</p>
-<p><strong>d₁</strong> = d − 1.2269 × P — Minor diameter (external)</p>
-<p><strong>D₁</strong> = d − 1.0825 × P — Minor diameter (internal / tap drill)</p>
-<p><strong>Aₛ</strong> = (π/4) × ((d₂ + d₃)/2)² — Tensile stress area, where d₃ = D₁ − H/6</p>
-</div>
-</section>
-
-<section class="mb-12">
-<h2 class="text-2xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-<div class="space-y-5 text-sm">
-<div>
-<h3 class="font-semibold text-gray-900 mb-1">How is tensile stress area calculated?</h3>
-<p class="text-gray-700">Tensile stress area is calculated as As = (pi/4) × ((d2 + d3)/2)², where d2 is the pitch diameter and d3 = D1 - H/6 (D1 = d - 1.0825P is the internal minor diameter, H is the fundamental triangle height). This is per ISO 898-1. For unified inch threads, the calculator uses the ASME B1.1 formula As = 0.7854 × (D - 0.9743/n)², where n is threads per inch.</p>
-</div>
-<div>
-<h3 class="font-semibold text-gray-900 mb-1">What formulas does this calculator use?</h3>
-<p class="text-gray-700">This calculator uses ISO 724 formulas for metric threads and ASME B1.1 for unified inch threads. Pitch diameter: d2 = d - 0.6495P. Minor diameter: d1 = d - 1.2269P. Thread depth: 5H/8 where H = (sqrt(3)/2) × P.</p>
-</div>
-</div>
-</section>
-
+</header>
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Calculator</li></ol></nav>
+<h1>Thread Calculator</h1>
+<p class="lead">Calculates the basic dimensions of any 60° thread from its major diameter and pitch: ISO metric, Unified inch, or a special size that is in no chart. Results appear as you type.</p>
+<div class="panel" style="margin-bottom:1.5rem"><div class="calc"><div><label for="system">Thread system</label><select id="system"><option value="metric">Metric (mm)</option><option value="inch">Inch (TPI)</option></select></div><div><label for="diameter" id="diam-label">Major diameter (mm)</label><input type="number" id="diameter" value="10" step="0.1" min="0" inputmode="decimal"></div><div><label for="pitch" id="pitch-label">Pitch (mm)</label><input type="number" id="pitch" value="1.5" step="0.01" min="0" inputmode="decimal"></div></div><p id="msg" class="err" role="alert" style="margin:.75rem 0 0"></p></div>
+<section><h2>Basic dimensions</h2><div class="tw data-table-zone" tabindex="0" role="region" aria-label="Calculated dimensions"><table class="spec" aria-live="polite"><thead><tr><th scope="col">Dimension</th><th scope="col" class="n">mm</th><th scope="col" class="n">in</th></tr></thead><tbody id="results"></tbody></table></div><noscript><p class="note">The calculator needs JavaScript. The thread charts list the same values for every standard size.</p></noscript></section>
+<section><h2>Tap drill by percentage of thread</h2><div class="tw data-table-zone" tabindex="0" role="region" aria-label="Tap drill diameters"><table class="chart"><thead><tr><th scope="col">% thread</th><th scope="col" class="n">Drill Ø (mm)</th><th scope="col" class="n">Drill Ø (in)</th></tr></thead><tbody id="drills"></tbody></table></div><p class="small muted">These are exact diameters. Pick the nearest drill you have that is not below the 83% size, which is the basic minor diameter.</p></section>
+<section><h2>Formulas</h2><div class="panel"><ul><li>H = 0.866025 × P, the height of the fundamental triangle</li><li>Pitch diameter d<sub>2</sub> = d − 0.649519 × P</li><li>Minor diameter of the internal thread D<sub>1</sub> = d − 1.082532 × P</li><li>Minor diameter of the external thread d<sub>3</sub> = d − 1.226869 × P (ISO metric, rounded root) or d − 1.190785 × P (Unified UNR)</li><li>Tensile stress area, metric: A<sub>s</sub> = π/4 × ((d<sub>2</sub> + d<sub>3</sub>) ÷ 2)² (ISO 898-1)</li><li>Tensile stress area, inch: A<sub>s</sub> = 0.7854 × (d − 0.9743 ÷ n)², n = threads per inch (ASME B1.1)</li><li>Tap drill = d − (% thread ÷ 100) × 1.299038 × P</li><li>Lead angle = arctan(P ÷ (π × d<sub>2</sub>))</li></ul></div><p>The calculator gives basic sizes, before tolerances. For a standard thread, the thread page also lists the tolerance limits and the drill sizes that are actually stocked.</p></section>
+<section class="faq"><h2>Common questions</h2><h3>Does the calculator work for pipe threads?</h3><p>No. NPT and BSP threads have different proportions and, for NPT, a taper. Use the <a href="/pipe-threads/">NPT</a> and <a href="/bsp/">BSP</a> charts.</p><h3>Why is the tap drill larger than the minor diameter?</h3><p>The basic minor diameter is the smallest the hole may be. Drilling to it means cutting an 83% thread, which loads the tap heavily. The standard drill leaves about 77%.</p><h3>Can I use it for Whitworth or Acme threads?</h3><p>No. The formulas are for the 60° profile shared by ISO metric and Unified threads.</p></section>
+<section><h2>Other charts and tools</h2><ul class="chips"><li><a href="/metric/">Metric coarse chart</a></li><li><a href="/metric-fine/">Metric fine chart</a></li><li><a href="/unc/">UNC chart</a></li><li><a href="/unf/">UNF chart</a></li><li><a href="/unef/">UNEF chart</a></li><li><a href="/pipe-threads/">NPT chart</a></li><li><a href="/bsp/">BSP chart</a></li><li><a href="/tap-drill-chart/">Tap drill chart</a></li><li><a href="/thread-identifier/">Thread identifier</a></li></ul></section>
+<p class="small muted">Sources: ISO 724, ISO 898-1 and ASME B1.1 (formulas). <a href="/about/#sources">How this site checks its data</a>. Last reviewed 29 September 2026.</p>
 </main>
-<footer class="bg-gray-100 border-t mt-16">
-<div class="max-w-6xl mx-auto px-4 py-10">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-<div>
-<div class="font-semibold text-gray-800 mb-3">Metric Threads</div>
-<ul class="space-y-1 text-sm text-gray-600">
-<li><a href="/metric/" class="hover:text-emerald-700">ISO Metric Coarse</a></li>
-<li><a href="/metric-fine/" class="hover:text-emerald-700">ISO Metric Fine</a></li>
-<li><a href="/metric/m6/" class="hover:text-emerald-700">M6 Thread</a></li>
-<li><a href="/metric/m8/" class="hover:text-emerald-700">M8 Thread</a></li>
-<li><a href="/metric/m10/" class="hover:text-emerald-700">M10 Thread</a></li>
-</ul>
+<footer class="site-foot">
+<div class="foot-in">
+<div class="foot-grid">
+<div><h2>Metric threads</h2><ul>
+<li><a href="/metric/">ISO metric coarse chart</a></li>
+<li><a href="/metric-fine/">ISO metric fine chart</a></li>
+<li><a href="/metric/m6/">M6 thread</a></li>
+<li><a href="/metric/m8/">M8 thread</a></li>
+<li><a href="/metric/m10/">M10 thread</a></li>
+<li><a href="/metric/m12/">M12 thread</a></li>
+</ul></div>
+<div><h2>Inch threads</h2><ul>
+<li><a href="/unc/">UNC thread chart</a></li>
+<li><a href="/unf/">UNF thread chart</a></li>
+<li><a href="/unef/">UNEF thread chart</a></li>
+<li><a href="/unc/1-4-unc/">1/4-20 UNC</a></li>
+<li><a href="/unc/3-8-unc/">3/8-16 UNC</a></li>
+<li><a href="/unc/1-2-unc/">1/2-13 UNC</a></li>
+</ul></div>
+<div><h2>Pipe threads</h2><ul>
+<li><a href="/pipe-threads/">NPT thread chart</a></li>
+<li><a href="/bsp/">BSP thread chart</a></li>
+<li><a href="/npt-vs-bsp/">NPT vs BSP</a></li>
+<li><a href="/npt/1-4-npt/">1/4 NPT</a></li>
+<li><a href="/npt/1-2-npt/">1/2 NPT</a></li>
+<li><a href="/bsp/g1-2-bsp/">G1/2 BSP</a></li>
+</ul></div>
+<div><h2>Tools and guides</h2><ul>
+<li><a href="/tap-drill-chart/">Tap drill chart</a></li>
+<li><a href="/calculator/">Thread calculator</a></li>
+<li><a href="/thread-identifier/">Thread identifier</a></li>
+<li><a href="/thread-terminology/">Thread terminology</a></li>
+<li><a href="/coarse-vs-fine/">Coarse vs fine threads</a></li>
+<li><a href="/about/">About and sources</a></li>
+</ul></div>
 </div>
-<div>
-<div class="font-semibold text-gray-800 mb-3">Inch Threads</div>
-<ul class="space-y-1 text-sm text-gray-600">
-<li><a href="/unc/" class="hover:text-emerald-700">UNC Thread Chart</a></li>
-<li><a href="/unf/" class="hover:text-emerald-700">UNF Thread Chart</a></li>
-<li><a href="/unef/" class="hover:text-emerald-700">UNEF Thread Chart</a></li>
-<li><a href="/unc/1-4-unc/" class="hover:text-emerald-700">1/4-20 UNC</a></li>
-<li><a href="/unc/1-2-unc/" class="hover:text-emerald-700">1/2-13 UNC</a></li>
-</ul>
-</div>
-<div>
-<div class="font-semibold text-gray-800 mb-3">Pipe Threads</div>
-<ul class="space-y-1 text-sm text-gray-600">
-<li><a href="/pipe-threads/" class="hover:text-emerald-700">NPT Thread Chart</a></li>
-<li><a href="/bsp/" class="hover:text-emerald-700">BSP Thread Chart</a></li>
-<li><a href="/npt-vs-bsp/" class="hover:text-emerald-700">NPT vs BSP</a></li>
-</ul>
-</div>
-<div>
-<div class="font-semibold text-gray-800 mb-3">Tools</div>
-<ul class="space-y-1 text-sm text-gray-600">
-<li><a href="/tap-drill-chart/" class="hover:text-emerald-700">Tap Drill Chart</a></li>
-<li><a href="/calculator/" class="hover:text-emerald-700">Thread Calculator</a></li>
-<li><a href="/about/" class="hover:text-emerald-700">About</a></li>
-</ul>
-</div>
-</div>
-<div class="border-t pt-6 text-sm text-gray-500 text-center">
-<p>&copy; 2026 ThreadSpec.org — Thread Specifications &amp; Tap Drill Reference</p>
-<p class="mt-1">Contact: <!--email_off--><a href="mailto:info&#64;threadspec&#46;org" class="text-emerald-700 hover:underline">info&#64;threadspec&#46;org</a><!--/email_off--></p>
-<p class="mt-1"><a href="/about/" class="hover:underline">About</a> · <a href="/privacy/" class="hover:underline">Privacy</a> · <a href="/sitemap.xml" class="hover:underline">Sitemap</a></p>
+<div class="foot-base">
+<p>&copy; 2026 ThreadSpec.org. Thread dimensions and tap drill reference.</p>
+<p>Contact: <!--email_off--><a href="mailto:info&#64;threadspec&#46;org">info&#64;threadspec&#46;org</a><!--/email_off--></p>
+<p><a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/sitemap.xml">Sitemap</a></p>
 </div>
 </div>
 </footer>
-
 <script>
-function updateUnits() {
-    const sys = document.getElementById('system').value;
-    if (sys === 'metric') {
-        document.getElementById('diam-label').textContent = 'Nominal Diameter (mm)';
-        document.getElementById('pitch-label').textContent = 'Pitch (mm)';
-        document.getElementById('diameter').value = '10';
-        document.getElementById('pitch').value = '1.5';
-    } else {
-        document.getElementById('diam-label').textContent = 'Nominal Diameter (inches)';
-        document.getElementById('pitch-label').textContent = 'TPI (threads per inch)';
-        document.getElementById('diameter').value = '0.5';
-        document.getElementById('pitch').value = '13';
-    }
-    calculate();
+(function(){
+var $=function(i){return document.getElementById(i)};
+function row(k,a,b){return '<tr><th scope="row">'+k+'</th><td class="n">'+a+'</td><td class="n">'+b+'</td></tr>'}
+function units(){
+  var m=$('system').value==='metric';
+  $('diam-label').textContent=m?'Major diameter (mm)':'Major diameter (in)';
+  $('pitch-label').textContent=m?'Pitch (mm)':'Threads per inch';
+  $('diameter').value=m?'10':'0.5';$('pitch').value=m?'1.5':'13';
+  $('diameter').step=m?'0.1':'0.0001';
+  calc();
 }
-
-function calculate() {
-    const sys = document.getElementById('system').value;
-    let d = parseFloat(document.getElementById('diameter').value);
-    let p_input = parseFloat(document.getElementById('pitch').value);
-    if (isNaN(d) || isNaN(p_input) || d <= 0 || p_input <= 0) {
-        document.querySelector('#results-table tbody').innerHTML = '<tr><td class="px-4 py-2 text-red-600" colspan="2">Invalid input — enter a positive diameter and pitch.</td></tr>';
-        return;
-    }
-
-    let P, unit;
-    let asmeAs = null;
-    if (sys === 'metric') {
-        P = p_input;
-        unit = 'mm';
-    } else {
-        P = 1.0 / p_input;  // TPI to pitch in inches
-        asmeAs = 0.7854 * Math.pow(d - 0.9743 / p_input, 2) * 645.16;  // ASME B1.1, converted to mm²
-        P = P * 25.4;  // convert to mm for formula
-        d = d * 25.4;  // convert to mm
-        unit = 'mm';
-    }
-
-    const H = (Math.sqrt(3) / 2) * P;
-    const d2 = d - 0.6495 * P;
-    const d1 = d - 1.2269 * P;
-    const D1 = d - 1.0825 * P;
-    if (D1 <= 0) {
-        document.querySelector('#results-table tbody').innerHTML = '<tr><td class="px-4 py-2 text-red-600" colspan="2">Pitch too large — minor diameter would be negative.</td></tr>';
-        return;
-    }
-    const threadDepth = 5 * H / 8;
-    const d3 = D1 - H / 6;
-    const As = asmeAs !== null ? asmeAs : (Math.PI / 4) * Math.pow((d2 + d3) / 2, 2);
-
-    const TPI = 25.4 / P;
-
-    const tbody = document.querySelector('#results-table tbody');
-    tbody.innerHTML = `
-        <tr class="bg-gray-50"><td class="px-4 py-2 font-medium border">Major Diameter (d)</td><td class="px-4 py-2 border">${d.toFixed(3)} mm (${(d/25.4).toFixed(4)}")</td></tr>
-        <tr><td class="px-4 py-2 font-medium border">Pitch</td><td class="px-4 py-2 border">${P.toFixed(4)} mm (${TPI.toFixed(1)} TPI)</td></tr>
-        <tr class="bg-gray-50"><td class="px-4 py-2 font-medium border">Pitch Diameter (d₂)</td><td class="px-4 py-2 border">${d2.toFixed(4)} mm (${(d2/25.4).toFixed(4)}")</td></tr>
-        <tr><td class="px-4 py-2 font-medium border">Minor Diameter — External (d₁)</td><td class="px-4 py-2 border">${d1.toFixed(4)} mm (${(d1/25.4).toFixed(4)}")</td></tr>
-        <tr class="bg-emerald-50"><td class="px-4 py-2 font-medium border">Tap Drill (D₁)</td><td class="px-4 py-2 border font-bold text-emerald-700">${D1.toFixed(2)} mm (${(D1/25.4).toFixed(4)}")</td></tr>
-        <tr><td class="px-4 py-2 font-medium border">Thread Depth (5H/8)</td><td class="px-4 py-2 border">${threadDepth.toFixed(4)} mm</td></tr>
-        <tr class="bg-gray-50"><td class="px-4 py-2 font-medium border">Fundamental Triangle (H)</td><td class="px-4 py-2 border">${H.toFixed(4)} mm</td></tr>
-        <tr><td class="px-4 py-2 font-medium border">Tensile Stress Area (Aₛ)</td><td class="px-4 py-2 border">${As.toFixed(2)} mm² (${(As/645.16).toFixed(5)} in²)</td></tr>
-    `;
+function calc(){
+  var m=$('system').value==='metric',d=parseFloat($('diameter').value),q=parseFloat($('pitch').value);
+  var out=$('results'),msg=$('msg');
+  if(!(d>0)||!(q>0)){msg.textContent='Enter a diameter and a pitch greater than zero.';out.innerHTML='';$('drills').innerHTML='';return}
+  var f=m?1:25.4,D=d*f,P=m?q:25.4/q;
+  if(D-1.226869*P<=0){msg.textContent='That pitch is too coarse for the diameter: the thread would have no core.';out.innerHTML='';$('drills').innerHTML='';return}
+  msg.textContent='';
+  var H=0.866025*P,d2=D-0.649519*P,D1=D-1.082532*P,k=m?1.226869:1.190785,d3=D-k*P;
+  var As=m?Math.PI/4*Math.pow((d2+d3)/2,2):0.7854*Math.pow(D-0.9743*P,2);
+  var lead=Math.atan(P/(Math.PI*d2))*180/Math.PI;
+  function b(v){return row.apply(null,arguments)}
+  function mm(v){return v.toFixed(3)} function inch(v){return (v/25.4).toFixed(4)}
+  out.innerHTML=
+   row('Major diameter d',mm(D),inch(D))+row('Pitch P',mm(P),(P/25.4).toFixed(5))+
+   row('Threads per inch',(25.4/P).toFixed(2),'')+
+   row('Pitch diameter d<sub>2</sub>',mm(d2),inch(d2))+
+   row('Minor diameter, internal D<sub>1</sub>',mm(D1),inch(D1))+
+   row('Minor diameter, external d<sub>3</sub>',mm(d3),inch(d3))+
+   row('Fundamental triangle height H',mm(H),inch(H))+
+   row('Thread height 5H/8',mm(0.541266*P),inch(0.541266*P))+
+   row('Lead angle',lead.toFixed(2)+'°','')+
+   row('Tensile stress area',As.toFixed(2)+' mm²',(As/645.16).toFixed(5)+' in²');
+  var h='';[83,77,70,65,60].forEach(function(p){var dr=D-p/100*1.299038*P;
+   h+='<tr'+(p===77?' class="rec"':'')+'><th scope="row">'+p+'%'+(p===77?' <span class="tag">standard</span>':'')+'</th><td class="n">'+dr.toFixed(2)+'</td><td class="n">'+(dr/25.4).toFixed(4)+'</td></tr>'});
+  $('drills').innerHTML=h;
 }
-
-calculate();
+$('system').addEventListener('change',units);
+$('diameter').addEventListener('input',calc);$('pitch').addEventListener('input',calc);
+calc();
+})();
 </script>
-
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Thread Calculator","url":"https://threadspec.org/calculator/","applicationCategory":"Engineering","operatingSystem":"Web"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate thread pitch diameter?","acceptedAnswer":{"@type":"Answer","text":"For metric threads: d₂ = d − 0.6495 × P. For inch threads: d₂ = d − 0.6495 / n (where d = major diameter, P = pitch in mm, n = TPI). The pitch diameter is where thread width equals space width."}},{"@type":"Question","name":"How do I calculate tap drill size?","acceptedAnswer":{"@type":"Answer","text":"The standard tap drill is d − P (nominal diameter minus pitch) for approximately 75% thread engagement. For M10×1.5: 10 − 1.5 = 8.5 mm. For 1/4-20 UNC: 0.250 − 1/20 = 0.200″, nearest standard is #7 (0.201″)."}},{"@type":"Question","name":"What is tensile stress area?","acceptedAnswer":{"@type":"Answer","text":"Tensile stress area (Aₛ) = π/4 × ((d₂ + d₃)/2)² where d₂ is the pitch diameter and d₃ = D₁ − H/6. It represents the effective cross-sectional area under tension per ISO 898 and ASME B1.1."}}]}</script>
-</body></html>
+</body>
+</html>

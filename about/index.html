@@ -3,143 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About ThreadSpec.org — Thread Specification Reference</title>
-<meta name="description" content="About ThreadSpec.org: a comprehensive thread specification reference with dimensions calculated from ISO 724 and ASME B1.1 formulas.">
+<title>About ThreadSpec.org: Sources and How the Data Is Checked</title>
+<meta name="description" content="ThreadSpec.org is an independent thread reference. How dimensions are computed and checked against ISO 724, ISO 965-1, ASME B1.1, ASME B1.20.1 and ISO 228-1.">
 <link rel="canonical" href="https://threadspec.org/about/">
-<link rel="alternate" hreflang="en" href="https://threadspec.org/about/">
-<link rel="alternate" hreflang="x-default" href="https://threadspec.org/about/">
-<meta property="og:title" content="About ThreadSpec.org — Thread Specification Reference">
-<meta property="og:description" content="About ThreadSpec.org: a comprehensive thread specification reference with dimensions calculated from ISO 724 and ASME B1.1 formulas.">
+<meta property="og:title" content="About ThreadSpec.org: Sources and How the Data Is Checked">
+<meta property="og:description" content="ThreadSpec.org is an independent thread reference. How dimensions are computed and checked against ISO 724, ISO 965-1, ASME B1.1, ASME B1.20.1 and ISO 228-1.">
 <meta property="og:url" content="https://threadspec.org/about/">
 <meta property="og:image" content="https://threadspec.org/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ThreadSpec.org">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#059669">
+<meta name="theme-color" content="#047857">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/tailwind.css">
+<link rel="stylesheet" href="/assets/site.css?v=3974ada7">
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500,'region':['BE','BG','CZ','DK','DE','EE','IE','GR','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE','GB','CH','IS','LI','NO']});gtag('consent','default',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5861928596436289" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPVR72CBWM"></script>
 <script>gtag('js',new Date());gtag('config','G-EPVR72CBWM');</script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="Mltx4IlGmyyajJD6d+8LLg" async></script>
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://threadspec.org/"},{"@type":"ListItem","position":2,"name":"About","item":"https://threadspec.org/about/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","url":"https://threadspec.org/about/","name":"About ThreadSpec.org: Sources and How the Data Is Checked","description":"ThreadSpec.org is an independent thread reference. How dimensions are computed and checked against ISO 724, ISO 965-1, ASME B1.1, ASME B1.20.1 and ISO 228-1.","inLanguage":"en","dateModified":"2026-09-29","mainEntity":{"@type":"Organization","name":"ThreadSpec.org","url":"https://threadspec.org/","logo":"https://threadspec.org/logos/logo-icon-512x512.png","email":"info@threadspec.org"}}</script>
 </head>
-<body class="bg-white text-gray-900">
-<nav class="bg-emerald-700 text-white shadow-lg">
-<div class="max-w-6xl mx-auto px-4">
-<div class="flex items-center justify-between h-16">
-<a href="/" class="text-xl font-bold flex items-center gap-2">
-<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
-ThreadSpec.org
-</a>
-<div class="hidden md:flex items-center gap-6 text-sm">
-<a href="/metric/" class="hover:text-emerald-200">Metric</a>
-<a href="/unc/" class="hover:text-emerald-200">UNC</a>
-<a href="/unf/" class="hover:text-emerald-200">UNF</a>
-<a href="/pipe-threads/" class="hover:text-emerald-200">Pipe</a>
-<a href="/tap-drill-chart/" class="hover:text-emerald-200">Tap Drills</a>
-<a href="/calculator/" class="hover:text-emerald-200">Calculator</a>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav">
+<div class="nav-in">
+<a href="/" class="brand"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>ThreadSpec.org</a>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links" onclick="var m=document.getElementById('nav-links');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false')"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<nav class="nav-links" id="nav-links" aria-label="Main"><a href="/metric/">Metric</a><a href="/unc/">UNC</a><a href="/unf/">UNF</a><a href="/pipe-threads/">NPT</a><a href="/bsp/">BSP</a><a href="/tap-drill-chart/">Tap Drills</a><a href="/calculator/">Calculator</a><a href="/thread-identifier/">Identify</a></nav>
 </div>
-<button aria-label="Open navigation menu" aria-expanded="false" onclick="var m=document.getElementById('mob-menu');var open=!m.classList.contains('hidden');m.classList.toggle('hidden');this.setAttribute('aria-expanded',String(open?'false':'true'))" class="md:hidden p-2">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-</button>
-</div>
-</div>
-<div id="mob-menu" class="hidden md:hidden px-4 pb-3 space-y-2">
-<a href="/metric/" class="block py-1 hover:text-emerald-200">Metric Threads</a>
-<a href="/unc/" class="block py-1 hover:text-emerald-200">UNC Threads</a>
-<a href="/unf/" class="block py-1 hover:text-emerald-200">UNF Threads</a>
-<a href="/pipe-threads/" class="block py-1 hover:text-emerald-200">Pipe Threads</a>
-<a href="/tap-drill-chart/" class="block py-1 hover:text-emerald-200">Tap Drill Chart</a>
-<a href="/calculator/" class="block py-1 hover:text-emerald-200">Calculator</a>
-</div>
-</nav>
-<main class="max-w-3xl mx-auto px-4 py-8">
-<div class="text-sm py-3"><a href="/" class="text-emerald-700 hover:underline">Home</a> <span class="text-gray-400 mx-1">›</span> <span class="text-gray-500">About</span></div>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://threadspec.org/"},{"@type":"ListItem","position":2,"name":"About","item":"https://threadspec.org/about/"}]}</script>
-
-<h1 class="text-3xl font-bold text-gray-900 mb-6">About ThreadSpec.org</h1>
-
-<div class="prose max-w-none text-gray-700 space-y-4">
-<p>ThreadSpec.org is a comprehensive thread specification reference designed for engineers, machinists, maintenance technicians, and makers. Our goal is to provide accurate, easy-to-access thread data for the most commonly used thread standards worldwide.</p>
-
-<h2 class="text-xl font-bold text-gray-900 mt-8 mb-3">Data Sources</h2>
-<p>Every dimension on this site is calculated directly from published engineering formulas — not copied from other charts or databases. This ensures consistency and allows us to show exactly how each value is derived.</p>
-<ul class="list-disc pl-6 space-y-1">
-<li><strong>ISO 724</strong> — Metric thread geometry (pitch diameter, minor diameter, thread depth)</li>
-<li><strong>ISO 261</strong> — Metric thread standard pitches</li>
-<li><strong>ISO 898-1</strong> — Metric fastener property classes and proof loads</li>
-<li><strong>ASME B1.1</strong> — Unified inch thread dimensions (UNC, UNF, UNEF)</li>
-<li><strong>ASME B1.20.1</strong> — NPT pipe thread specifications</li>
-<li><strong>ISO 228-1 (parallel, G thread)</strong> — BSP pipe thread specifications</li>
-</ul>
-
-<h2 class="text-xl font-bold text-gray-900 mt-8 mb-3">Coverage</h2>
-<p>Our database currently includes 207 thread specifications across six major standards:</p>
-<ul class="list-disc pl-6 space-y-1">
-<li>36 ISO Metric Coarse sizes (M1 to M68)</li>
-<li>56 ISO Metric Fine sizes</li>
-<li>33 UNC (Unified National Coarse) sizes</li>
-<li>24 UNF (Unified National Fine) sizes</li>
-<li>25 UNEF (Unified National Extra Fine) sizes</li>
-<li>19 NPT (National Pipe Taper) sizes</li>
-<li>21 BSP (British Standard Pipe) sizes</li>
-</ul>
-
-<h2 class="text-xl font-bold text-gray-900 mt-8 mb-3">Contact</h2>
-<p>Questions, corrections, or suggestions? Email us at <!--email_off--><a href="mailto:info&#64;threadspec&#46;org" class="text-emerald-700 hover:underline">info&#64;threadspec&#46;org</a><!--/email_off-->.</p>
-</div>
-
+</header>
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">About</li></ol></nav>
+<h1>About ThreadSpec.org</h1>
+<p class="lead">ThreadSpec.org is an independent reference for screw thread dimensions and tap drills, covering 214 threads in seven series. It is free to use and is funded by advertising.</p>
+<section><h2>What the site covers</h2><div class="tw data-table-zone" tabindex="0" role="region" aria-label="Thread series covered"><table class="chart"><thead><tr><th scope="col">Series</th><th scope="col">Sizes</th><th scope="col">Range</th><th scope="col">Standard</th></tr></thead><tbody><tr><th scope="row"><a href="/metric/">ISO metric coarse</a></th><td>36</td><td>M1 to M68</td><td>ISO 261, ISO 724</td></tr><tr><th scope="row"><a href="/metric-fine/">ISO metric fine</a></th><td>56</td><td>M3×0.35 to M48×3</td><td>ISO 261, ISO 724</td></tr><tr><th scope="row"><a href="/unc/">Unified coarse (UNC)</a></th><td>33</td><td>#1-64 to 4-4</td><td>ASME B1.1</td></tr><tr><th scope="row"><a href="/unf/">Unified fine (UNF)</a></th><td>24</td><td>#0-80 to 1-1/2-12</td><td>ASME B1.1</td></tr><tr><th scope="row"><a href="/unef/">Unified extra fine (UNEF)</a></th><td>25</td><td>#12-32 to 1-11/16-18</td><td>ASME B1.1</td></tr><tr><th scope="row"><a href="/pipe-threads/">NPT</a></th><td>19</td><td>1/16 to 12</td><td>ASME B1.20.1</td></tr><tr><th scope="row"><a href="/bsp/">BSP parallel (G)</a></th><td>21</td><td>G1/16 to G4</td><td>ISO 228-1</td></tr></tbody></table></div></section>
+<section id="sources"><h2>How the data is produced and checked</h2><p>All pages are generated from one data set, so a chart and the page for a single thread cannot disagree. Three kinds of value are handled differently.</p><h3>Computed from the standard formulas</h3><p>The pitch, minor and root diameters, thread heights, lead angles and stress areas of metric and Unified threads are calculated from the major diameter and pitch with the formulas of ISO 724 and ASME B1.1. The results are then compared automatically with values printed in the standards: the stress areas of ISO 898-1 and ASME B1.1, the basic diameters in ASME B1.1 Table 2, and the 6g and 6H limits of ISO 965-2. A page is not published if a computed value disagrees with the printed one.</p><h3>Taken from tables in the standards</h3><p>NPT dimensions are those of ASME B1.20.1 Table 2 and BSP dimensions those of ISO 228-1 Table 1. Class 2A and 2B limits are from ASME B1.1 Table 2, clearance holes from ISO 273 and ASME B18.2.8, and strength values from ISO 898-1 and SAE J429, each shown only for the sizes the standard covers.</p><h3>Conventions</h3><p>A tap drill is a recommendation, not a dimension of the thread, and published charts do not always agree. Metric drills follow the diameter-minus-pitch rule of ISO 2306 as rounded in standard tables. Inch drills are those of Machinery’s Handbook and the usual shop charts. NPT drills are the ones suggested in the appendix of ASME B1.20.1, with the common chart value shown beside them where it differs. BSP drills are from tap manufacturers’ charts. Where a size appears in no chart, the page says how the drill was chosen.</p><h3>Standards referred to</h3><ul><li>ISO 68-1, ISO 261, ISO 724: metric thread profile, series and basic dimensions</li><li>ISO 965-1 and ISO 965-2: metric thread tolerances and limits of size</li><li>ISO 273: clearance holes for bolts and screws</li><li>ISO 898-1: mechanical properties of steel fasteners</li><li>ISO 2306: drills for tapping</li><li>ISO 228-1 and ISO 7-1: pipe threads, parallel and taper</li><li>ASME B1.1: Unified inch screw threads</li><li>ASME B1.20.1: pipe threads, general purpose (inch)</li><li>ASME B18.2.8: clearance holes for inch fasteners</li><li>SAE J429: mechanical requirements for inch bolts</li></ul></section>
+<section><h2>Limits of this reference</h2><p>The pages give basic sizes and the general-purpose tolerance classes. They are a working reference and do not replace the standards themselves, which contain further classes, gauging rules and conditions. For safety-critical or contractual work, confirm the values against the current edition of the governing standard.</p></section>
+<section><h2>Corrections</h2><p>If you find a value that disagrees with a standard, please write to <!--email_off--><a href="mailto:info&#64;threadspec&#46;org">info&#64;threadspec&#46;org</a><!--/email_off--> with the thread, the value and the source. Confirmed errors are corrected and the page date is updated.</p></section>
+<section><h2>Contact</h2><p>Email: <!--email_off--><a href="mailto:info&#64;threadspec&#46;org">info&#64;threadspec&#46;org</a><!--/email_off--></p></section>
+<p class="small muted">Last reviewed 29 September 2026.</p>
 </main>
-<footer class="bg-gray-100 border-t mt-16">
-<div class="max-w-6xl mx-auto px-4 py-10">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-<div>
-<div class="font-semibold text-gray-800 mb-3">Metric Threads</div>
-<ul class="space-y-1 text-sm text-gray-600">
-<li><a href="/metric/" class="hover:text-emerald-700">ISO Metric Coarse</a></li>
-<li><a href="/metric-fine/" class="hover:text-emerald-700">ISO Metric Fine</a></li>
-<li><a href="/metric/m6/" class="hover:text-emerald-700">M6 Thread</a></li>
-<li><a href="/metric/m8/" class="hover:text-emerald-700">M8 Thread</a></li>
-<li><a href="/metric/m10/" class="hover:text-emerald-700">M10 Thread</a></li>
-</ul>
+<footer class="site-foot">
+<div class="foot-in">
+<div class="foot-grid">
+<div><h2>Metric threads</h2><ul>
+<li><a href="/metric/">ISO metric coarse chart</a></li>
+<li><a href="/metric-fine/">ISO metric fine chart</a></li>
+<li><a href="/metric/m6/">M6 thread</a></li>
+<li><a href="/metric/m8/">M8 thread</a></li>
+<li><a href="/metric/m10/">M10 thread</a></li>
+<li><a href="/metric/m12/">M12 thread</a></li>
+</ul></div>
+<div><h2>Inch threads</h2><ul>
+<li><a href="/unc/">UNC thread chart</a></li>
+<li><a href="/unf/">UNF thread chart</a></li>
+<li><a href="/unef/">UNEF thread chart</a></li>
+<li><a href="/unc/1-4-unc/">1/4-20 UNC</a></li>
+<li><a href="/unc/3-8-unc/">3/8-16 UNC</a></li>
+<li><a href="/unc/1-2-unc/">1/2-13 UNC</a></li>
+</ul></div>
+<div><h2>Pipe threads</h2><ul>
+<li><a href="/pipe-threads/">NPT thread chart</a></li>
+<li><a href="/bsp/">BSP thread chart</a></li>
+<li><a href="/npt-vs-bsp/">NPT vs BSP</a></li>
+<li><a href="/npt/1-4-npt/">1/4 NPT</a></li>
+<li><a href="/npt/1-2-npt/">1/2 NPT</a></li>
+<li><a href="/bsp/g1-2-bsp/">G1/2 BSP</a></li>
+</ul></div>
+<div><h2>Tools and guides</h2><ul>
+<li><a href="/tap-drill-chart/">Tap drill chart</a></li>
+<li><a href="/calculator/">Thread calculator</a></li>
+<li><a href="/thread-identifier/">Thread identifier</a></li>
+<li><a href="/thread-terminology/">Thread terminology</a></li>
+<li><a href="/coarse-vs-fine/">Coarse vs fine threads</a></li>
+<li><a href="/about/">About and sources</a></li>
+</ul></div>
 </div>
-<div>
-<div class="font-semibold text-gray-800 mb-3">Inch Threads</div>
-<ul class="space-y-1 text-sm text-gray-600">
-<li><a href="/unc/" class="hover:text-emerald-700">UNC Thread Chart</a></li>
-<li><a href="/unf/" class="hover:text-emerald-700">UNF Thread Chart</a></li>
-<li><a href="/unef/" class="hover:text-emerald-700">UNEF Thread Chart</a></li>
-<li><a href="/unc/1-4-unc/" class="hover:text-emerald-700">1/4-20 UNC</a></li>
-<li><a href="/unc/1-2-unc/" class="hover:text-emerald-700">1/2-13 UNC</a></li>
-</ul>
-</div>
-<div>
-<div class="font-semibold text-gray-800 mb-3">Pipe Threads</div>
-<ul class="space-y-1 text-sm text-gray-600">
-<li><a href="/pipe-threads/" class="hover:text-emerald-700">NPT Thread Chart</a></li>
-<li><a href="/bsp/" class="hover:text-emerald-700">BSP Thread Chart</a></li>
-<li><a href="/npt-vs-bsp/" class="hover:text-emerald-700">NPT vs BSP</a></li>
-</ul>
-</div>
-<div>
-<div class="font-semibold text-gray-800 mb-3">Tools</div>
-<ul class="space-y-1 text-sm text-gray-600">
-<li><a href="/tap-drill-chart/" class="hover:text-emerald-700">Tap Drill Chart</a></li>
-<li><a href="/calculator/" class="hover:text-emerald-700">Thread Calculator</a></li>
-<li><a href="/about/" class="hover:text-emerald-700">About</a></li>
-</ul>
-</div>
-</div>
-<div class="border-t pt-6 text-sm text-gray-500 text-center">
-<p>&copy; 2026 ThreadSpec.org — Thread Specifications &amp; Tap Drill Reference</p>
-<p class="mt-1">Contact: <!--email_off--><a href="mailto:info&#64;threadspec&#46;org" class="text-emerald-700 hover:underline">info&#64;threadspec&#46;org</a><!--/email_off--></p>
-<p class="mt-1"><a href="/about/" class="hover:underline">About</a> · <a href="/privacy/" class="hover:underline">Privacy</a> · <a href="/sitemap.xml" class="hover:underline">Sitemap</a></p>
+<div class="foot-base">
+<p>&copy; 2026 ThreadSpec.org. Thread dimensions and tap drill reference.</p>
+<p>Contact: <!--email_off--><a href="mailto:info&#64;threadspec&#46;org">info&#64;threadspec&#46;org</a><!--/email_off--></p>
+<p><a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/sitemap.xml">Sitemap</a></p>
 </div>
 </div>
 </footer>
-</body></html>
+</body>
+</html>
